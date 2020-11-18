@@ -11,22 +11,44 @@ class App extends Component {
 
     ChangeSection = (nextSection) => {
         if (!this.state.changeCooldown) {
+            let direction = null
+            if (nextSection > this.state.currentSection) {
+                direction = "["
+            }
+            else if (nextSection < this.state.currentSection) {
+                direction = "]"
+            }
+
             if (nextSection > this.state.sectionCount) {
-                this.setState({changeCooldown: true, currentSection: this.state.sectionCount})
-                console.log("Max reached")
+                if (this.state.currentSection !== this.state.sectionCount) {
+                    this.setState({changeCooldown: true, currentSection: this.state.sectionCount}, () => this.ChangeHandler(direction))
+                    console.log("Max reached")
+                }
             }
             else if (nextSection < 1) {
-                this.setState({changeCooldown: true, currentSection: 1})
-                console.log("Min reached")
+                if (this.state.currentSection !== 1) {
+                    this.setState({changeCooldown: true, currentSection: 1}, () => this.ChangeHandler(direction))
+                    console.log("Min reached")
+                }
             }
             else {
-                this.setState({changeCooldown: true, currentSection: nextSection})
+                this.setState({changeCooldown: true, currentSection: nextSection}, () => this.ChangeHandler(direction))
                 console.log("Changing Section...")
             }
-            setTimeout(() => {
-                this.setState({changeCooldown: false})
-            }, this.state.transitionTime);
         }
+    }
+
+    ChangeHandler = (direction) => {
+        if (direction != null) {
+            window.dispatchEvent(
+                new KeyboardEvent("keydown", {
+                    key: direction
+                })
+            )
+        }
+        setTimeout(() => {
+            this.setState({changeCooldown: false})
+        }, this.state.transitionTime);
     }
 
     componentDidMount = () => {
@@ -45,10 +67,10 @@ class App extends Component {
         return (
             <Fragment>
                 <div style={{position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0, 0, 0, 1)`}}>
-                    <Container>111</Container>
-                    <Container>222</Container>
-                    <Container>333</Container>
-                    <Container>444</Container>
+                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "white"}}></div>111</Container>
+                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "green"}}></div>222</Container>
+                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "red"}}></div>333</Container>
+                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "blue"}}></div>444</Container>
                 </div>
                 <button style={{position: "fixed", top: "0", right: "60px"}} onClick={() => this.ChangeSection(4)}>last</button>
                 <button style={{position: "fixed", top: "0", right: "30px"}} onClick={() => this.ChangeSection(this.state.currentSection - 1)}>-1</button>

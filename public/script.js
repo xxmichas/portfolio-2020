@@ -1401,7 +1401,7 @@ window.addEventListener('keydown', e => {
         config.PAUSED = !config.PAUSED;
     if (e.key === ' ')
         splatStack.push(parseInt(Math.random() * 20) + 5);
-    if (e.code === 'KeyX') {
+    if (e.key === "]") {
         const color = generateColor();
         color.r *= 10.0;
         color.g *= 10.0;
@@ -1412,7 +1412,7 @@ window.addEventListener('keydown', e => {
         const dy = -5000;
         splat(x, y, dx, dy, color);
     }
-    if (e.code === 'KeyZ') {
+    if (e.key === "[") {
         const color = generateColor();
         color.r *= 10.0;
         color.g *= 10.0;
