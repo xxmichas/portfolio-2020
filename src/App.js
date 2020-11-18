@@ -41,11 +41,13 @@ class App extends Component {
 
     ChangeHandler = (direction) => {
         if (direction != null) {
-            window.dispatchEvent(
-                new KeyboardEvent("keydown", {
-                    key: direction
-                })
-            )
+            setTimeout(() => {
+                window.dispatchEvent(
+                    new KeyboardEvent("keydown", {
+                        key: direction
+                    })
+                )
+            }, (this.state.transitionTime - 175));
         }
         setTimeout(() => {
             this.setState({changeCooldown: false})
@@ -69,9 +71,9 @@ class App extends Component {
             <Fragment>
                 <div style={{position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0, 0, 0, 1)`}}>
                     <Container><ProfileCard /></Container>
-                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "green"}}></div>222</Container>
-                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "red"}}></div>333</Container>
-                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "blue"}}></div>444</Container>
+                    <Container><ProfileCard /></Container>
+                    <Container><ProfileCard /></Container>
+                    <Container><ProfileCard /></Container>
                 </div>
                 <button style={{position: "fixed", top: "0", right: "60px"}} onClick={() => this.ChangeSection(4)}>last</button>
                 <button style={{position: "fixed", top: "0", right: "30px"}} onClick={() => this.ChangeSection(this.state.currentSection - 1)}>-1</button>

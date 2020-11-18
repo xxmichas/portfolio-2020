@@ -7,12 +7,10 @@ const ProfileCard = () => {
         <Fragment>
             <div className={styles.Card}>
                 <div className={styles.BackgroundContainer}>
-                    <div className={styles.Background}>
-                    
-                    </div>
+                    <div className={styles.Background} />
                 </div>
                 <img className={styles.Picture} src={profilePicture} alt="Profile" />
-                <h2>Michal Orkisz</h2>
+                <h2 className={styles.TextShadow}>Michal Orkisz</h2>
             </div>
         </Fragment>
     )
