@@ -1,0 +1,51 @@
+.Card {
+    width: 400px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-color: white;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+}
+
+.Card:hover .Background {
+    background-position-y: -90px;
+    width: 50%;
+}
+
+.Picture {
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #272133;
+    background-color: white;
+    z-index: 100;
+}
+
+.Background {
+    background-image: url("../../assets/background.png");
+    width: 100%;
+    height: 190px;
+    top: 0;
+    position: absolute;
+    background-position-y: -20px;
+    background-size: cover;
+    transition: all 300ms ease-in-out;
+}
+
+.BackgroundContainer {
+    width: 250%;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    top: 0;
+    position: absolute;
+}

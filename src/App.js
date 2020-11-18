@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Container from './containers/Container/Container'
+import ProfileCard from './containers/ProfileCard/ProfileCard'
 
 class App extends Component {
     state = {
@@ -67,7 +68,7 @@ class App extends Component {
         return (
             <Fragment>
                 <div style={{position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0, 0, 0, 1)`}}>
-                    <Container><div style={{width: "100px", height: "100px", backgroundColor: "white"}}></div>111</Container>
+                    <Container><ProfileCard /></Container>
                     <Container><div style={{width: "100px", height: "100px", backgroundColor: "green"}}></div>222</Container>
                     <Container><div style={{width: "100px", height: "100px", backgroundColor: "red"}}></div>333</Container>
                     <Container><div style={{width: "100px", height: "100px", backgroundColor: "blue"}}></div>444</Container>
