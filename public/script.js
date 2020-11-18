@@ -1377,7 +1377,7 @@ window.addEventListener('keydown', e => {
         color.g *= 10.0;
         color.b *= 10.0;
         const x = 0.5;
-        const y = 0.20;
+        const y = 0.25;
         const dx = 0;
         const dy = -5000;
         splat(x, y, dx, dy, color);
@@ -1388,7 +1388,7 @@ window.addEventListener('keydown', e => {
         color.g *= 10.0;
         color.b *= 10.0;
         const x = 0.5;
-        const y = 0.80;
+        const y = 0.75;
         const dx = 0;
         const dy = 5000;
         splat(x, y, dx, dy, color);
