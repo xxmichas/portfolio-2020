@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Fluid.module.css'
 
-export class Fluid extends Component {
+class Fluid extends Component {
     componentDidMount = () => {
         const script = document.createElement("script");
         script.src = process.env.PUBLIC_URL + '/script.js'
