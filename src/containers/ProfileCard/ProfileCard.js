@@ -35,7 +35,7 @@ const ProfileCard = () => {
                                     enterDone: styles.IconsEnterDone,
                                     exitActive: styles.IconsExitActive,
                                     exitDone: styles.IconsExitDone
-                                }} timeout={500} unmountOnExit>
+                                }} timeout={250} unmountOnExit>
                                 <div className={styles.Icons}>
                                     <FontAwesomeIcon icon={faGithub} className={styles.Icon} size="2x" />
                                     <FontAwesomeIcon icon={faDiscord} className={styles.Icon} style={{padding: "5px 169px 5px 11px"}} size="2x" />

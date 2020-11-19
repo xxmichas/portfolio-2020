@@ -12,6 +12,11 @@
     overflow: hidden;
     background-position: center;
     margin: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.Card:hover {
+    color: white;
 }
 
 .Card:hover .Background {
@@ -53,6 +58,11 @@
 
 .TextShadow {
     text-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+    transition: all 300ms ease-in-out;
+}
+
+.Card:hover .TextShadow {
+    text-shadow: 10px 10px 15px rgba(0,0,0,0);
 }
 
 .Title {
@@ -60,6 +70,10 @@
     padding: 10px;
     border-bottom: 1px solid black;
     margin-bottom: 5px;
+}
+
+.Card:hover .Title {
+    border-bottom: 1px solid white;
 }
 
 p {
@@ -100,18 +114,18 @@ p {
 .Icons {
     display: block;
     opacity: 0;
-    margin-top: 80px;
-    transition: all 500ms ease-in-out;
+    margin-top: 40px;
+    transition: all 250ms ease-out;
 }
 
 .IconsEnterActive {
-    display: block;
     opacity: 1;
+    margin-top: 80px;
 }
 
 .IconsEnterDone {
-    display: block;
     opacity: 1;
+    margin-top: 80px;
 }
 
 .IconsExitActive {
