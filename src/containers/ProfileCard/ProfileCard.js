@@ -10,7 +10,10 @@ const ProfileCard = () => {
                     <div className={styles.Background} />
                 </div>
                 <img className={styles.Picture} src={profilePicture} alt="Profile" />
-                <h2 className={styles.TextShadow}>Michal Orkisz</h2>
+                <span className={`${styles.TextShadow} ${styles.Title}`}>Michael Orkisz</span>
+                <span className={styles.TextShadow} style={{fontSize: "1.25em", marginBlockEnd: "1em"}}>- Aspiring Web Developer -</span>
+                <p>Hi, My name is Michael. I am an Aspiring Web Developer, mainly working in JavaScript, HTML, CSS & Node.js</p>
+                <p>I like C# and making games in unity (but as a side hobby)</p>
             </div>
         </Fragment>
     )
