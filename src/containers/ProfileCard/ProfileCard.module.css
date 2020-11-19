@@ -168,6 +168,12 @@ p {
 .Socials p {
     margin: 0 20px;
     text-transform: none;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.SocialsEnterDone p {
+    opacity: 1;
 }
 
 .Socials img {
