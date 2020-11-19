@@ -17,10 +17,10 @@ const ProfileCard = () => {
         let Timeouts = []
         let Interval = 100
         if (abort === true) {
-            //Timeouts.forEach(el => {
-            //    clearTimeout(el)
-            //});
-            //Timeouts.length = 0
+            Timeouts.forEach(el => {
+                clearTimeout(el)
+            });
+            Timeouts.length = 0
             setShowSocial({email: false, github: false, discord: false, steam: false, twitter: false})
         }
         else{
@@ -82,13 +82,13 @@ const ProfileCard = () => {
                                     enterDone: styles.IconsEnterDone,
                                     exitActive: styles.IconsExitActive,
                                     exitDone: styles.IconsExitDone
-                                }} timeout={250} unmountOnExit onEntered={() => {
+                                }} timeout={250} onEntered={() => {
                                     ShowSocialHandler(false)
                                 }} onExit={() => {
                                     ShowSocialHandler(true)
                                 }}>
-                                    {state => {
-                                        console.log(`state 2: ${state}`)
+                                    {state2 => {
+                                        console.log(`state 2: ${state2}`)
                                         return (
                                             <div className={styles.Icons}>
                                                 <CSSTransition in={showSocial.email} classNames={{
