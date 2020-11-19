@@ -38,7 +38,7 @@
     position: absolute;
     background-position-y: -20px;
     background-size: cover;
-    transition: all 300ms ease-in-out;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .BackgroundContainer {
@@ -68,4 +68,65 @@ p {
     margin-right: 20px;
     text-align: center;
     text-transform: capitalize;
+}
+
+.Overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 0px;
+    top: 190px;
+    display: flex;
+    justify-content: center;
+    transition: all 300ms ease-in-out;
+}
+
+.OverlayEnterActive {
+    height: 360px;
+}
+
+.OverlayEnterDone {
+    height: 360px;
+}
+
+.OverlayExitActive {
+    height: 0px;
+}
+
+.OverlayExitDone {
+    height: 0px;
+}
+
+.Icons {
+    display: block;
+    opacity: 0;
+    margin-top: 80px;
+    transition: all 500ms ease-in-out;
+}
+
+.IconsEnterActive {
+    display: block;
+    opacity: 1;
+}
+
+.IconsEnterDone {
+    display: block;
+    opacity: 1;
+}
+
+.IconsExitActive {
+    opacity: 0;
+}
+
+.IconsExitDone {
+    opacity: 0;
+}
+
+.Icon {
+    display: block;
+    margin: 11px 6px;
+    padding: 5px 165px 5px 11px;
+    border-radius: 20px;
+    background-color: white;
+    color: rgba(167, 146, 129, 0.6);
 }

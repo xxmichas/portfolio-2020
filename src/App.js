@@ -69,7 +69,7 @@ class App extends Component {
     render() {
         return (
             <Fragment>
-                <div style={{position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0, 0, 0, 1)`}}>
+                <div style={{position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0.19, 1, 0.22, 1)`}}>
                     <Container><ProfileCard /></Container>
                     <Container></Container>
                     <Container><ProfileCard /></Container>
