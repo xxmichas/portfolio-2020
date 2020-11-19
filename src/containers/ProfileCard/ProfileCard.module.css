@@ -137,7 +137,7 @@ p {
 }
 
 .Socials {
-    width: 250px;
+    width: 40px;
     height: 40px;
     padding: 5px 5px 5px 5px;
     border-radius: 40px 40px 40px 40px;
@@ -146,6 +146,23 @@ p {
     margin-bottom: 5px;
     display: flex;
     line-height: 40px;
+    transition: all 300ms ease-in-out;
+}
+
+.SocialsEnterActive {
+    width: 250px;
+}
+
+.SocialsEnterDone {
+    width: 250px;
+}
+
+.SocialsExitActive {
+    width: 40px;
+}
+
+.SocialsExitDone {
+    width: 40px;
 }
 
 .Socials p {

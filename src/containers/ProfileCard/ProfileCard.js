@@ -29,7 +29,7 @@ const ProfileCard = () => {
                     exitDone: styles.OverlayExitDone
                 }} timeout={300}>
                     {state => {
-                        console.log(state)
+                        //console.log(state)
                         return (
                             <div className={styles.Overlay}>
                                 <CSSTransition in={state === "entered"} classNames={{
@@ -38,13 +38,53 @@ const ProfileCard = () => {
                                     exitActive: styles.IconsExitActive,
                                     exitDone: styles.IconsExitDone
                                 }} timeout={250} unmountOnExit>
-                                <div className={styles.Icons}>
-                                    <div className={styles.Socials}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
-                                    <div className={styles.Socials}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
-                                    <div className={styles.Socials}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
-                                    <div className={styles.Socials}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
-                                    <div className={styles.Socials}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
-                                </div>
+                                    {state => {
+                                        console.log(`state 2: ${state}`)
+                                        return (
+                                            <div className={styles.Icons}>
+                                                <CSSTransition in={state === "entered"} classNames={{
+                                                    enterActive: styles.SocialsEnterActive,
+                                                    enterDone: styles.SocialsEnterDone,
+                                                    exitActive: styles.SocialsExitActive,
+                                                    exitDone: styles.SocialsExitDone
+                                                }} timeout={300}>
+                                                    <div className={styles.Socials}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
+                                                </CSSTransition>
+                                                <CSSTransition in={state === "entered"} classNames={{
+                                                    enterActive: styles.SocialsEnterActive,
+                                                    enterDone: styles.SocialsEnterDone,
+                                                    exitActive: styles.SocialsExitActive,
+                                                    exitDone: styles.SocialsExitDone
+                                                }} timeout={300}>
+                                                    <div className={styles.Socials}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
+                                                </CSSTransition>
+                                                <CSSTransition in={state === "entered"} classNames={{
+                                                    enterActive: styles.SocialsEnterActive,
+                                                    enterDone: styles.SocialsEnterDone,
+                                                    exitActive: styles.SocialsExitActive,
+                                                    exitDone: styles.SocialsExitDone
+                                                }} timeout={300}>
+                                                    <div className={styles.Socials}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
+                                                </CSSTransition>
+                                                <CSSTransition in={state === "entered"} classNames={{
+                                                    enterActive: styles.SocialsEnterActive,
+                                                    enterDone: styles.SocialsEnterDone,
+                                                    exitActive: styles.SocialsExitActive,
+                                                    exitDone: styles.SocialsExitDone
+                                                }} timeout={300}>
+                                                    <div className={styles.Socials}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
+                                                </CSSTransition>
+                                                <CSSTransition in={state === "entered"} classNames={{
+                                                    enterActive: styles.SocialsEnterActive,
+                                                    enterDone: styles.SocialsEnterDone,
+                                                    exitActive: styles.SocialsExitActive,
+                                                    exitDone: styles.SocialsExitDone
+                                                }} timeout={300}>
+                                                    <div className={styles.Socials}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
+                                                </CSSTransition>
+                                            </div>
+                                        )
+                                    }}
                                 </CSSTransition>
                             </div>
                         )
