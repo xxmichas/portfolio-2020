@@ -146,6 +146,15 @@ p {
     margin-bottom: 5px;
     display: flex;
     line-height: 40px;
+    transition: background-color 200ms ease-in-out;
+}
+
+.Socials:hover  p{
+    transform: translateX(5px);
+}
+
+.Socials:hover {
+    background-color: #eee;
 }
 
 .SocialsEnterActive:nth-child(1) {
@@ -201,17 +210,31 @@ p {
     margin: 0 20px;
     text-transform: none;
     opacity: 0;
+    font-size: 1.15em;
+    transition: transform 200ms ease-in-out;
 }
 
 @keyframes SocialExpand {
-    0%   {width: 40px;}
-    25%  {width: 40px;}
-    100% {width: 250px;}
+    0% {
+        width: 40px;
+    }
+    25% {
+        width: 40px;
+    }
+    100% {
+        width: 250px;
+        cursor: pointer;
+    }
 }
 
 @keyframes Fade {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        cursor: pointer;
+    }
 }
 
 .Socials img {
