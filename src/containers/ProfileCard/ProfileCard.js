@@ -1,11 +1,13 @@
 import React, { Fragment, useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import styles from './ProfileCard.module.css'
 import profilePicture from '../../assets/snoo.png'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitter, faSteam, faDiscord } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { CSSTransition } from 'react-transition-group'
+import Steam from '../../assets/social/steam.png'
+import Discord from '../../assets/social/discord.png'
+import Gmail from '../../assets/social/gmail.png'
+import Github from '../../assets/social/github.png'
+import Twitter from '../../assets/social/twitter.png'
 
 const ProfileCard = () => {
     const [Hovered, setHovered] = useState(false)
@@ -37,11 +39,11 @@ const ProfileCard = () => {
                                     exitDone: styles.IconsExitDone
                                 }} timeout={250} unmountOnExit>
                                 <div className={styles.Icons}>
-                                    <FontAwesomeIcon icon={faGithub} className={styles.Icon} size="2x" />
-                                    <FontAwesomeIcon icon={faDiscord} className={styles.Icon} style={{padding: "5px 169px 5px 11px"}} size="2x" />
-                                    <FontAwesomeIcon icon={faEnvelope} className={styles.Icon} size="2x" />
-                                    <FontAwesomeIcon icon={faSteam} className={styles.Icon} size="2x" />
-                                    <FontAwesomeIcon icon={faTwitter} className={styles.Icon} size="2x" />
+                                    <div className={styles.Socials}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
+                                    <div className={styles.Socials}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
+                                    <div className={styles.Socials}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
+                                    <div className={styles.Socials}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
+                                    <div className={styles.Socials}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
                                 </div>
                                 </CSSTransition>
                             </div>

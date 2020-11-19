@@ -136,11 +136,24 @@ p {
     opacity: 0;
 }
 
-.Icon {
-    display: block;
-    margin: 11px 6px;
-    padding: 5px 165px 5px 11px;
-    border-radius: 20px;
+.Socials {
+    width: 250px;
+    height: 40px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 40px 40px 40px 40px;
     background-color: white;
-    color: rgba(167, 146, 129, 0.6);
+    color: black;
+    margin-bottom: 5px;
+    display: flex;
+    line-height: 40px;
+}
+
+.Socials p {
+    margin: 0 20px;
+    text-transform: none;
+}
+
+.Socials img {
+    width: auto;
+    height: 100%;
 }
