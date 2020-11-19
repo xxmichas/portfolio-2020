@@ -11,6 +11,51 @@ import Twitter from '../../assets/social/twitter.png'
 
 const ProfileCard = () => {
     const [Hovered, setHovered] = useState(false)
+    const [showSocial, setShowSocial] = useState({email: false, github: false, discord: false, steam: false, twitter: false})
+
+    const ShowSocialHandler = (abort) => {
+        let Timeouts = []
+        let Interval = 100
+        if (abort === true) {
+            //Timeouts.forEach(el => {
+            //    clearTimeout(el)
+            //});
+            //Timeouts.length = 0
+            setShowSocial({email: false, github: false, discord: false, steam: false, twitter: false})
+        }
+        else{
+            let e = setTimeout(() => {
+                setShowSocial(prevState => ({...prevState, email: true}))
+                Timeouts.splice(Timeouts.indexOf(e), 1)
+            }, Interval * 1)
+            Timeouts.push(e)
+            let g = setTimeout(() => {
+                setShowSocial(prevState => ({...prevState, github: true}))
+                Timeouts.splice(Timeouts.indexOf(g), 1)
+            }, Interval * 2)
+            Timeouts.push(g)
+            let d = setTimeout(() => {
+                setShowSocial(prevState => ({...prevState, discord: true}))
+                Timeouts.splice(Timeouts.indexOf(d), 1)
+            }, Interval * 3)
+            Timeouts.push(d)
+            let s = setTimeout(() => {
+                setShowSocial(prevState => ({...prevState, steam: true}))
+                Timeouts.splice(Timeouts.indexOf(s), 1)
+            }, Interval * 4)
+            Timeouts.push(s)
+            let t = setTimeout(() => {
+                setShowSocial(prevState => ({...prevState, twitter: true}))
+                Timeouts.splice(Timeouts.indexOf(t), 1)
+            }, Interval * 5)
+            Timeouts.push(t)
+            console.log(Timeouts)
+            setTimeout(() => {
+                console.log(Timeouts)
+            }, 330);
+        }
+    }
+
     return (
         <Fragment>
             <div className={styles.Card} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
@@ -37,12 +82,16 @@ const ProfileCard = () => {
                                     enterDone: styles.IconsEnterDone,
                                     exitActive: styles.IconsExitActive,
                                     exitDone: styles.IconsExitDone
-                                }} timeout={250} unmountOnExit>
+                                }} timeout={250} unmountOnExit onEntered={() => {
+                                    ShowSocialHandler(false)
+                                }} onExit={() => {
+                                    ShowSocialHandler(true)
+                                }}>
                                     {state => {
                                         console.log(`state 2: ${state}`)
                                         return (
                                             <div className={styles.Icons}>
-                                                <CSSTransition in={state === "entered"} classNames={{
+                                                <CSSTransition in={showSocial.email} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterDone,
                                                     exitActive: styles.SocialsExitActive,
@@ -50,7 +99,7 @@ const ProfileCard = () => {
                                                 }} timeout={300}>
                                                     <div className={styles.Socials}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state === "entered"} classNames={{
+                                                <CSSTransition in={showSocial.github} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterDone,
                                                     exitActive: styles.SocialsExitActive,
@@ -58,7 +107,7 @@ const ProfileCard = () => {
                                                 }} timeout={300}>
                                                     <div className={styles.Socials}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state === "entered"} classNames={{
+                                                <CSSTransition in={showSocial.discord} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterDone,
                                                     exitActive: styles.SocialsExitActive,
@@ -66,7 +115,7 @@ const ProfileCard = () => {
                                                 }} timeout={300}>
                                                     <div className={styles.Socials}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state === "entered"} classNames={{
+                                                <CSSTransition in={showSocial.steam} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterDone,
                                                     exitActive: styles.SocialsExitActive,
@@ -74,7 +123,7 @@ const ProfileCard = () => {
                                                 }} timeout={300}>
                                                     <div className={styles.Socials}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state === "entered"} classNames={{
+                                                <CSSTransition in={showSocial.twitter} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterDone,
                                                     exitActive: styles.SocialsExitActive,
