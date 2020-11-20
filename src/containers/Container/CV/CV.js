@@ -77,7 +77,69 @@ const CV = () => {
                 </div>
             </div>
             <div className={`${styles.Panel} ${styles.PanelWide}`}>
-
+                <table className={styles.Table}>
+                    <thead>
+                        <tr>
+                            <th>Education</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2016 – 2019</td>
+                            <td>III Liceum Ogólnokształcące im. Cypriana Kamila Norwida in Kielce (high school)</td>
+                        </tr>
+                        <tr>
+                            <td>2019 – 2020</td>
+                            <td>Jan Kochanowski University in Kielce - Computer Science</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table className={styles.Table}>
+                    <thead>
+                        <tr>
+                            <th>Experience</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>06/2018 - 08/2018</td>
+                            <td>Warehouse operative at DPD</td>
+                        </tr>
+                        <tr>
+                            <td>06/2019 - 09/2019</td>
+                            <td>Waiting staff in a cafe at the Alnwick Garden</td>
+                        </tr>
+                        <tr>
+                            <td>06/2019 - 09/2019</td>
+                            <td>Waiter in The Treehouse Restaurant at the Alnwick Garden</td>
+                        </tr>
+                        <tr>
+                            <td>09/2020 - current</td>
+                            <td>Busser in Quod Restaurant</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table className={styles.Table}>
+                    <thead>
+                        <tr>
+                            <th>Additional qualifications</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody className={styles.TBodyQuals}>
+                        <tr>
+                            <td>Warehouse operative at DPD</td>
+                        </tr>
+                        <tr>
+                            <td>Waiting staff in a cafe at the Alnwick Garden</td>
+                        </tr>
+                        <tr>
+                            <td>Waiter in The Treehouse Restaurant at the Alnwick Garden</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )
