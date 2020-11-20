@@ -12,6 +12,10 @@ import Twitter from '../../assets/social/twitter.png'
 const ProfileCard = () => {
     const [Hovered, setHovered] = useState(false)
     const [Name, setName] = useState("Michael Orkisz")
+    const [OverlayActive, setOverlayActive] = useState(false)
+    const [SocialsActive, setSocialsActive] = useState(false)
+    const [SocialsExpanding, setSocialsExpanding] = useState(false)
+    const [SocialsColapsing, setSocialsColapsing] = useState(false)
 
     const setNameHandler = (newName) => {
         if (Name === "Michael Orkisz") {
@@ -32,13 +36,7 @@ const ProfileCard = () => {
         }
     }
 
-    const [OverlayActive, setOverlayActive] = useState(false)
-    const [SocialsActive, setSocialsActive] = useState(false)
-    const [SocialsExpanding, setSocialsExpanding] = useState(false)
-    const [SocialsColapsing, setSocialsColapsing] = useState(false)
-
-    const SocialsStateHandler = (state2) => {
-        console.log(`Colapsing: ${SocialsColapsing}, Expanding: ${SocialsExpanding}`)
+    const SocialsStateHandler = (state) => {
         if (SocialsExpanding) {
             return true
         }
@@ -48,7 +46,7 @@ const ProfileCard = () => {
             }
             else {
                 if (Hovered) {
-                    if (state2 === "entered") {
+                    if (state === "entered") {
                         return true
                     }
                     else {
