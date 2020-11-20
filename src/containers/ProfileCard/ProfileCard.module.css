@@ -20,10 +20,6 @@
     color: white;
 }
 
-.Card:hover .BackgroundContainer {
-    height: 550px;
-}
-
 .Picture {
     margin-top: 50px;
     width: 200px;
@@ -54,7 +50,24 @@
     background-color: black;
     top: 0;
     position: absolute;
-    transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.BackgroundContainerEnter {
+    height: 550px;
+    transition: all 300ms ease-in-out;
+}
+
+.BackgroundContainerEnterDone {
+    height: 550px;
+}
+
+.BackgroundContainerExit {
+    height: 190px;
+    transition: all 300ms ease-in-out;
+}
+
+.BackgroundContainerExitDone {
+    height: 190px;
 }
 
 .TextShadow {
@@ -97,10 +110,10 @@
     top: 190px;
     display: flex;
     justify-content: center;
-    transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.OverlayEnterActive {
+.OverlayEnter {
+    transition: all 300ms ease-in-out;
     height: 360px;
 }
 
@@ -108,7 +121,8 @@
     height: 360px;
 }
 
-.OverlayExitActive {
+.OverlayExit {
+    transition: all 300ms ease-in-out;
     height: 0px;
 }
 
@@ -204,12 +218,15 @@
 }
 
 .SocialsExitActive {
-    animation-name: SocialExpand;
-    animation-duration: 250ms;
+    animation-name: SocialColapse;
+    animation-duration: 500ms;
     animation-timing-function: ease-in-out;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-    animation-direction: reverse;
+}
+
+.SocialsExitActive p {
+    animation: Fade 105ms ease-in-out 0ms forwards reverse;
 }
 
 .Socials p {
@@ -232,6 +249,19 @@
     100% {
         width: 250px;
         cursor: pointer;
+    }
+}
+
+@keyframes SocialColapse {
+    0% {
+        width: 250px;
+        cursor: pointer;
+    }
+    35% {
+        width: 250px;
+    }
+    100% {
+        width: 40px;
     }
 }
 

@@ -32,12 +32,46 @@ const ProfileCard = () => {
         }
     }
 
+    const [OverlayActive, setOverlayActive] = useState(false)
+    const [SocialsActive, setSocialsActive] = useState(false)
+    const [SocialsFinishedExpanding, setSocialsFinishedExpanding] = useState(true)
+    const [SocialsFinishedColapsing, setSocialsFinishedColapsing] = useState(true)
+
+    const WhatTheActualFuck = (state2) => {
+        console.log(`Colapsing: ${SocialsFinishedColapsing}, Expanding: ${SocialsFinishedExpanding}`)
+        if (Hovered) {
+            if (state2 === "entered") {
+                return true
+            }
+        }
+        else {
+            if (!SocialsFinishedColapsing) {
+                if (!SocialsFinishedExpanding) {
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
+            else {
+                return false
+            }
+        }
+    }
+
     return (
         <Fragment>
             <div className={styles.Card} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-                <div className={styles.BackgroundContainer}>
-                    <div className={styles.Background} />
-                </div>
+                <CSSTransition in={Hovered || OverlayActive} classNames={{
+                    enter: styles.BackgroundContainerEnter,
+                    enterDone: styles.BackgroundContainerEnterDone,
+                    exit: styles.BackgroundContainerExit,
+                    exitDone: styles.BackgroundContainerExitDone
+                }} timeout={300}>
+                    <div className={styles.BackgroundContainer}>
+                        <div className={styles.Background} />
+                    </div>
+                </CSSTransition>
                 <CSSTransition in={Hovered} classNames={{
                     enter: styles.NameContainerEnter,
                     enterDone: styles.NameContainerEnterDone,
@@ -65,62 +99,65 @@ const ProfileCard = () => {
                 <span className={styles.TextShadow} style={{fontSize: "1.25em", marginBlockEnd: "1em"}}>- Aspiring Web Developer -</span>
                 <p className={styles.Description}>Hi, My name is Michael. I am an Aspiring Web Developer, mainly working in JavaScript, HTML, CSS & Node.js</p>
                 <p className={styles.Description}>I like C# and making games in unity (but as a side hobby)</p>
-                <CSSTransition in={Hovered} classNames={{
-                    enterActive: styles.OverlayEnterActive,
+                <CSSTransition in={Hovered || OverlayActive} classNames={{
+                    enter: styles.OverlayEnter,
                     enterDone: styles.OverlayEnterDone,
-                    exitActive: styles.OverlayExitActive,
+                    exit: styles.OverlayExit,
                     exitDone: styles.OverlayExitDone
-                }} timeout={300}>
+                }} timeout={300}
+                onExited={() => {setOverlayActive(false); console.timeEnd()}} onExit={() => {console.time()}}>
                     {state => {
                         return (
                             <div className={styles.Overlay}>
-                                <CSSTransition in={state === "entered"} classNames={{
+                                <CSSTransition in={Hovered ? (state === "entered" ? true : false) : SocialsActive} classNames={{
                                     enterActive: styles.IconsEnterActive,
                                     enterDone: styles.IconsEnterDone,
                                     exitActive: styles.IconsExitActive,
                                     exitDone: styles.IconsExitDone
-                                }} timeout={300}>
+                                }} timeout={250}
+                                onEnter={() => setOverlayActive(true)} onExited={() => {setOverlayActive(false)}}>
                                     {state2 => {
                                         return (
                                             <div className={styles.Icons}>
-                                                <CSSTransition in={state2 === "entered"} classNames={{
+                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={300}>
+                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsFinishedExpanding(false); setSocialsFinishedColapsing(false)}}
+                                                onExited={() => setSocialsFinishedColapsing(true)}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas@gmail.com")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state2 === "entered"} classNames={{
+                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={300}>
+                                                }} timeout={{enter: 500, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://github.com/xxmichas")}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state2 === "entered"} classNames={{
+                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={300}>
+                                                }} timeout={{enter: 600, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas#0499")}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state2 === "entered"} classNames={{
+                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={300}>
+                                                }} timeout={{enter: 700, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://steamcommunity.com/id/xxmichas")}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={state2 === "entered"} classNames={{
+                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={300}>
+                                                }} timeout={{enter: 800, exit: 500}} onEntered={() => setSocialsFinishedExpanding(true)}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://twitter.com/xxmichas")}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
                                                 </CSSTransition>
                                             </div>
