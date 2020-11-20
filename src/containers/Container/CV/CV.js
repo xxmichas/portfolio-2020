@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import styles from './CV.module.css'
 
-const CV = () => {
+const CV = (props) => {
+
+    const [Focused, setFocused] = useState(false)
+    const THeadingConfig = {in: Focused, classNames: {
+        enterActive: styles.THeadingEnterActive,
+        enterDone: styles.THeadingEnterDone,
+        exitActive: styles.THeadingExitActive,
+        exitDone: styles.THeadingExitDone}, timeout: {enter: 800, exit: 500}
+    }
+    
+    useEffect(() => {
+        if (props.currentSection === 2) {
+            if (!Focused) {
+                setFocused(true)
+            }
+        }
+        else {
+            setFocused(false)
+        }
+    }, [Focused, props.currentSection])
     return (
         <div className={styles.PanelsContainer}>
             <div className={styles.PanelGroup}>
@@ -9,7 +29,9 @@ const CV = () => {
                     <table className={styles.Table}>
                         <thead>
                             <tr>
-                                <th>Personal Info</th>
+                                <CSSTransition {...THeadingConfig}>
+                                    <th>Personal Info</th>
+                                </CSSTransition>
                                 <th></th>
                             </tr>
                         </thead>
@@ -37,7 +59,9 @@ const CV = () => {
                     <table className={styles.Table}>
                         <thead>
                             <tr>
-                                <th>Languages</th>
+                                <CSSTransition {...THeadingConfig}>
+                                    <th>Languages</th>
+                                </CSSTransition>
                                 <th></th>
                             </tr>
                         </thead>
@@ -55,7 +79,9 @@ const CV = () => {
                     <table className={styles.Table}>
                         <thead>
                             <tr>
-                                <th>Programming Languages</th>
+                                <CSSTransition {...THeadingConfig}>
+                                    <th>Programming Languages</th>
+                                </CSSTransition>
                                 <th></th>
                             </tr>
                         </thead>
@@ -80,7 +106,9 @@ const CV = () => {
                 <table className={styles.Table}>
                     <thead>
                         <tr>
-                            <th>Education</th>
+                            <CSSTransition {...THeadingConfig}>
+                                <th>Education</th>
+                            </CSSTransition>
                             <th></th>
                         </tr>
                     </thead>
@@ -98,7 +126,9 @@ const CV = () => {
                 <table className={styles.Table}>
                     <thead>
                         <tr>
-                            <th>Experience</th>
+                            <CSSTransition {...THeadingConfig}>
+                                <th>Experience</th>
+                            </CSSTransition>
                             <th></th>
                         </tr>
                     </thead>
@@ -124,7 +154,9 @@ const CV = () => {
                 <table className={styles.Table}>
                     <thead>
                         <tr>
-                            <th>Additional qualifications</th>
+                            <CSSTransition {...THeadingConfig}>
+                                <th>Additional qualifications</th>
+                            </CSSTransition>
                             <th></th>
                         </tr>
                     </thead>

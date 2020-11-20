@@ -20,6 +20,7 @@
     height: 70%;
     border-radius: 15px;
     overflow: auto;
+    pointer-events: all;
     box-shadow: 0 1rem 3rem rgba(0,0,0, 0.5);
 }
 
@@ -64,6 +65,44 @@ th {
     font-size: 1.25em;
     border-bottom: 2px solid black;
     text-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+
+.THeadingEnterActive {
+    animation: THeadingEnabled 800ms ease-in-out;
+}
+
+.THeadingEnterDone {
+    transform: translateX(0%);
+}
+
+.THeadingExitActive {
+    animation: THeadingDisabled 500ms ease-in-out;
+}
+
+.THeadingExitDone {
+    transform: translateX(0%);
+    opacity: 0;
+}
+
+@keyframes THeadingEnabled {
+    0% {
+        transform: translateX(-100%);
+    }
+    35% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes THeadingDisabled {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .TBodyQuals td {
