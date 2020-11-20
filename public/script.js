@@ -25,12 +25,12 @@ let config = {
     BLOOM: true,
     BLOOM_ITERATIONS: 8,
     BLOOM_RESOLUTION: 256,
-    BLOOM_INTENSITY: 0.8,
+    BLOOM_INTENSITY: 0.5,
     BLOOM_THRESHOLD: 0.6,
     BLOOM_SOFT_KNEE: 0.7,
     SUNRAYS: true,
     SUNRAYS_RESOLUTION: 196,
-    SUNRAYS_WEIGHT: 0.5,
+    SUNRAYS_WEIGHT: 0.15,
 }
 
 function pointerPrototype () {
@@ -1371,7 +1371,7 @@ window.addEventListener('keydown', e => {
     //    config.PAUSED = !config.PAUSED;
     if (e.key === '\\')
         splatStack.push(parseInt(Math.random() * 20) + 5);
-    if (e.key === "]") {
+    if (e.key === "]" && e.shiftKey) {
         const color = generateColor();
         color.r *= 10.0;
         color.g *= 10.0;
@@ -1382,7 +1382,7 @@ window.addEventListener('keydown', e => {
         const dy = -5000;
         splat(x, y, dx, dy, color);
     }
-    if (e.key === "[") {
+    if (e.key === "[" && e.shiftKey) {
         const color = generateColor();
         color.r *= 10.0;
         color.g *= 10.0;
@@ -1392,6 +1392,9 @@ window.addEventListener('keydown', e => {
         const dx = 0;
         const dy = 5000;
         splat(x, y, dx, dy, color);
+    }
+    if (e.key === ":" && e.shiftKey) {
+        multipleSplats(10)
     }
 });
 

@@ -138,6 +138,9 @@ const CV = () => {
                         <tr>
                             <td>Created 2D/3D games for Windows using Unity Engine</td>
                         </tr>
+                        <tr>
+                            <td>Advanced Knowledge of Client-Side JavaScript, Node.js and Node Package Manager</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

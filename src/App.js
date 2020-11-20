@@ -52,7 +52,8 @@ class App extends Component {
             setTimeout(() => {
                 window.dispatchEvent(
                     new KeyboardEvent("keydown", {
-                        key: direction
+                        key: direction,
+                        shiftKey: true
                     })
                 )
             }, (this.state.transitionTime - 175));
