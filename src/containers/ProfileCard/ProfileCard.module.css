@@ -260,7 +260,6 @@
     height: 50px;
     opacity: 0;
     overflow: hidden;
-    transition: all 300ms ease-in-out;
 }
 
 .Name {
@@ -283,6 +282,7 @@
 
 .NameEnterActive {
     transform: translateY(0%);
+    transition: transform 400ms ease-in-out;
 }
 
 .NameExit {
@@ -291,13 +291,11 @@
 
 .NameExitActive {
     transform: translateY(-100%);
-}
-
-.NameEnterActive, .NameExitActive {
     transition: transform 400ms ease-in-out;
 }
 
-.NameContainerEnterActive {
+.NameContainerEnter {
+    transition: all 300ms ease-in-out;
     opacity: 1;
 }
 
@@ -305,7 +303,8 @@
     opacity: 1;
 }
 
-.NameContainerExitActive {
+.NameContainerExit {
+    transition: all 300ms ease-in-out;
     opacity: 0;
 }
 

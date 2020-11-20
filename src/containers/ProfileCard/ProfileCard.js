@@ -22,6 +22,16 @@ const ProfileCard = () => {
         }
     }
 
+    const CopyToClipboard = async (string) => {
+        try {
+            await navigator.clipboard.writeText(string);
+            setNameHandler("Copied!")
+        }
+        catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+
     return (
         <Fragment>
             <div className={styles.Card} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
@@ -29,14 +39,11 @@ const ProfileCard = () => {
                     <div className={styles.Background} />
                 </div>
                 <CSSTransition in={Hovered} classNames={{
-                    enterActive: styles.NameContainerEnterActive,
+                    enter: styles.NameContainerEnter,
                     enterDone: styles.NameContainerEnterDone,
-                    exitActive: styles.NameContainerExitActive,
+                    exit: styles.NameContainerExit,
                     exitDone: styles.NameContainerExitDone
-                }} addEndListener={(node, done) => {
-                    // use the css transitionend event to mark the finish of a transition
-                    node.addEventListener('transitionend', done, false);
-                  }}>
+                }} addEndListener={(node, done) => {node.addEventListener('transitionend', done, false);}}>
                     <div className={styles.NameContainer}>
                         <SwitchTransition mode="out-in">
                             <CSSTransition addEndListener={(node, done) => {node.addEventListener("transitionend", done, false);}} 
@@ -82,7 +89,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials} onClick={() => setNameHandler("Copied!")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
+                                                    <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas@gmail.com")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={state2 === "entered"} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
@@ -98,7 +105,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials} onClick={() => setNameHandler("Copied!")}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
+                                                    <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas#0499")}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={state2 === "entered"} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
