@@ -6,3 +6,7 @@ html, body {
     font-family: "Quicksand", sans-serif;
     overflow: hidden;
 }
+
+#root {
+    pointer-events: none;
+}

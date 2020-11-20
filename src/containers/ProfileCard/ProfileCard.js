@@ -97,7 +97,7 @@ const ProfileCard = () => {
                 </CSSTransition>
                 <img className={styles.Picture} src={profilePicture} alt="Profile" />
                 <span className={`${styles.TextShadow} ${styles.Title}`}>Michael Orkisz</span>
-                <span className={styles.TextShadow} style={{fontSize: "1.25em", marginBlockEnd: "1em"}}>- Aspiring Web Developer -</span>
+                <span className={styles.TextShadow} style={{fontSize: "1.25em", marginBlockEnd: "1em", userSelect: "none"}}>- Aspiring Web Developer -</span>
                 <p className={styles.Description}>Hi, My name is Michael. I am an Aspiring Web Developer, mainly working in JavaScript, HTML, CSS & Node.js</p>
                 <p className={styles.Description}>I like C# and making games in unity (but as a side hobby)</p>
                 <CSSTransition in={Hovered || OverlayActive} classNames={{

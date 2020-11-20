@@ -14,6 +14,8 @@
     margin: 10px;
     transition: all 300ms ease-in-out;
     box-shadow: 0 1rem 3rem rgba(0,0,0, 0.5);
+    pointer-events: all;
+    user-select: none;
 }
 
 .Card:hover {
@@ -85,6 +87,7 @@
     padding: 10px;
     border-bottom: 1px solid black;
     margin-bottom: 5px;
+    user-select: none;
     transition: all 300ms ease-in-out;
 }
 
