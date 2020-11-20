@@ -130,13 +130,13 @@ const CV = () => {
                     </thead>
                     <tbody className={styles.TBodyQuals}>
                         <tr>
-                            <td>Warehouse operative at DPD</td>
+                            <td>Great Knowledge of React library and completion of multiple react & redux courses</td>
                         </tr>
                         <tr>
-                            <td>Waiting staff in a cafe at the Alnwick Garden</td>
+                            <td>Created Windows programs using Electron Framework for JavaScript</td>
                         </tr>
                         <tr>
-                            <td>Waiter in The Treehouse Restaurant at the Alnwick Garden</td>
+                            <td>Created 2D/3D games for Windows using Unity Engine</td>
                         </tr>
                     </tbody>
                 </table>
