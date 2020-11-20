@@ -34,29 +34,18 @@ const ProfileCard = () => {
 
     const [OverlayActive, setOverlayActive] = useState(false)
     const [SocialsActive, setSocialsActive] = useState(false)
-    const [SocialsFinishedExpanding, setSocialsFinishedExpanding] = useState(true)
-    const [SocialsFinishedColapsing, setSocialsFinishedColapsing] = useState(true)
+    const [SocialsExpanding, setSocialsExpanding] = useState(false)
+    const [SocialsColapsing, setSocialsColapsing] = useState(false)
 
     const WhatTheActualFuck = (state2) => {
-        console.log(`Colapsing: ${SocialsFinishedColapsing}, Expanding: ${SocialsFinishedExpanding}`)
-        if (Hovered) {
-            if (state2 === "entered") {
-                return true
-            }
+        console.log(`Colapsing: ${SocialsColapsing}, Expanding: ${SocialsExpanding}`)
+        if (SocialsExpanding) {
+            return true
         }
         else {
-            if (!SocialsFinishedColapsing) {
-                if (!SocialsFinishedExpanding) {
-                    return true
-                }
-                else {
-                    return false
-                }
-            }
-            else {
-                return false
-            }
+            
         }
+        console.log(Hovered ? ((state2 === "entered") ? true : false) : !SocialsColapsing)
     }
 
     return (
@@ -124,8 +113,8 @@ const ProfileCard = () => {
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsFinishedExpanding(false); setSocialsFinishedColapsing(false)}}
-                                                onExited={() => setSocialsFinishedColapsing(true)}>
+                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} 
+                                                onExit={() => setSocialsColapsing(true)} onExited={() => {setSocialsColapsing(false)}}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas@gmail.com")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
@@ -157,7 +146,7 @@ const ProfileCard = () => {
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 800, exit: 500}} onEntered={() => setSocialsFinishedExpanding(true)}>
+                                                }} timeout={{enter: 800, exit: 500}} onEntered={() => setSocialsExpanding(false)}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://twitter.com/xxmichas")}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
                                                 </CSSTransition>
                                             </div>
