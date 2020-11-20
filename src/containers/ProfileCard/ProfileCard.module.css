@@ -246,3 +246,41 @@
     width: auto;
     height: 100%;
 }
+
+.NameContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.Name {
+    position: relative;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    color: white;
+}
+
+.NameEnter {
+    transform: translateY(-100%);
+}
+
+.NameEnterActive {
+    transform: translateY(0%);
+}
+
+.NameExit {
+    transform: translateY(0%);
+}
+
+.NameExitActive {
+    transform: translateY(-100%);
+}
+
+.NameEnterActive, .NameExitActive {
+    transition: transform 400ms ease-in-out;
+}

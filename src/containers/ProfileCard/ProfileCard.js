@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import styles from './ProfileCard.module.css'
 import profilePicture from '../../assets/snoo.png'
 
@@ -11,12 +11,37 @@ import Twitter from '../../assets/social/twitter.png'
 
 const ProfileCard = () => {
     const [Hovered, setHovered] = useState(false)
+    const [Name, setName] = useState("Michael Orkisz")
+
+    const setNameHandler = (newName) => {
+        if (Name === "Michael Orkisz") {
+            setName(newName)
+            setTimeout(() => {
+                setName("Michael Orkisz")
+            }, 1000);
+        }
+    }
 
     return (
         <Fragment>
             <div className={styles.Card} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                 <div className={styles.BackgroundContainer}>
                     <div className={styles.Background} />
+                </div>
+                <div className={styles.NameContainer}>
+                    <SwitchTransition mode="out-in">
+                        <CSSTransition addEndListener={(node, done) => {node.addEventListener("transitionend", done, false);}} 
+                            classNames={{
+                                enter: styles.NameEnter,
+                                enterActive: styles.NameEnterActive,
+                                exit: styles.NameExit,
+                                exitActive: styles.NameExitActive,
+                            }} key={Name}>
+                            <div className={styles.Name}>
+                                {Name}
+                            </div>
+                        </CSSTransition>
+                    </SwitchTransition>
                 </div>
                 <img className={styles.Picture} src={profilePicture} alt="Profile" />
                 <span className={`${styles.TextShadow} ${styles.Title}`}>Michael Orkisz</span>
@@ -63,7 +88,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
+                                                    <div className={styles.Socials} onClick={() => setNameHandler("Copied!")}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={state2 === "entered"} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
