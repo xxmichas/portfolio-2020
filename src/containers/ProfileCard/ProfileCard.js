@@ -43,7 +43,19 @@ const ProfileCard = () => {
             return true
         }
         else {
-            
+            if (SocialsColapsing) {
+                return false
+            }
+            else {
+                if (Hovered) {
+                    if (state2 === "entered") {
+                        return true
+                    }
+                }
+                else {
+                    return false
+                }
+            }
         }
         console.log(Hovered ? ((state2 === "entered") ? true : false) : !SocialsColapsing)
     }
@@ -113,8 +125,8 @@ const ProfileCard = () => {
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} 
-                                                onExit={() => setSocialsColapsing(true)} onExited={() => {setSocialsColapsing(false)}}>
+                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} onExited={() => {setSocialsColapsing(false)}}
+                                                onExit={() => setSocialsColapsing(true)}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas@gmail.com")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
@@ -146,7 +158,7 @@ const ProfileCard = () => {
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 800, exit: 500}} onEntered={() => setSocialsExpanding(false)}>
+                                                }} timeout={{enter: 800, exit: 500}} onEntered={() => {setSocialsExpanding(false);}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://twitter.com/xxmichas")}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
                                                 </CSSTransition>
                                             </div>
