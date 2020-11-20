@@ -37,7 +37,7 @@ const ProfileCard = () => {
     const [SocialsExpanding, setSocialsExpanding] = useState(false)
     const [SocialsColapsing, setSocialsColapsing] = useState(false)
 
-    const WhatTheActualFuck = (state2) => {
+    const SocialsStateHandler = (state2) => {
         console.log(`Colapsing: ${SocialsColapsing}, Expanding: ${SocialsExpanding}`)
         if (SocialsExpanding) {
             return true
@@ -51,13 +51,15 @@ const ProfileCard = () => {
                     if (state2 === "entered") {
                         return true
                     }
+                    else {
+                        return false
+                    }
                 }
                 else {
                     return false
                 }
             }
         }
-        console.log(Hovered ? ((state2 === "entered") ? true : false) : !SocialsColapsing)
     }
 
     return (
@@ -73,7 +75,7 @@ const ProfileCard = () => {
                         <div className={styles.Background} />
                     </div>
                 </CSSTransition>
-                <CSSTransition in={Hovered} classNames={{
+                <CSSTransition in={OverlayActive} classNames={{
                     enter: styles.NameContainerEnter,
                     enterDone: styles.NameContainerEnterDone,
                     exit: styles.NameContainerExit,
@@ -105,8 +107,7 @@ const ProfileCard = () => {
                     enterDone: styles.OverlayEnterDone,
                     exit: styles.OverlayExit,
                     exitDone: styles.OverlayExitDone
-                }} timeout={300}
-                onExited={() => {setOverlayActive(false); console.timeEnd()}} onExit={() => {console.time()}}>
+                }} timeout={300}>
                     {state => {
                         return (
                             <div className={styles.Overlay}>
@@ -120,16 +121,16 @@ const ProfileCard = () => {
                                     {state2 => {
                                         return (
                                             <div className={styles.Icons}>
-                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
+                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} onExited={() => {setSocialsColapsing(false)}}
-                                                onExit={() => setSocialsColapsing(true)}>
+                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} 
+                                                onExited={() => {setSocialsActive(false); setSocialsColapsing(false)}} onExit={() => setSocialsColapsing(true)}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas@gmail.com")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
+                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
@@ -137,7 +138,7 @@ const ProfileCard = () => {
                                                 }} timeout={{enter: 500, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://github.com/xxmichas")}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
+                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
@@ -145,7 +146,7 @@ const ProfileCard = () => {
                                                 }} timeout={{enter: 600, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas#0499")}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
+                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
@@ -153,7 +154,7 @@ const ProfileCard = () => {
                                                 }} timeout={{enter: 700, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://steamcommunity.com/id/xxmichas")}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={WhatTheActualFuck(state2)} classNames={{
+                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
                                                     enterDone: styles.SocialsEnterActive,
                                                     exitActive: styles.SocialsExitActive,
