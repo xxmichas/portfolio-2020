@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Container from './containers/Container/Container'
+import Section1 from './containers/Container/Section1/Section1'
 import ProfileCard from './containers/ProfileCard/ProfileCard'
 
 class App extends Component {
@@ -7,11 +8,17 @@ class App extends Component {
         currentSection: 1,
         sectionCount: 4,
         changeCooldown: false,
-        transitionTime: 500
+        transitionTime: 500,
+        scrollNotification: false,
+        firstScroll: true
     }
 
     ChangeSection = (nextSection) => {
         if (!this.state.changeCooldown) {
+            if (this.state.firstScroll) {
+                this.setState({scrollNotification: false, firstScroll: false})
+            }
+
             let direction = null
             if (nextSection > this.state.currentSection) {
                 direction = "["
@@ -64,13 +71,19 @@ class App extends Component {
                 this.ChangeSection(this.state.currentSection - 1)
             }
         })
+
+        setTimeout(() => {
+            if (this.state.firstScroll) {
+                this.setState({scrollNotification: true})
+            }
+        }, 2000);
     }
 
     render() {
         return (
             <Fragment>
                 <div style={{position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0.19, 1, 0.22, 1)`}}>
-                    <Container><ProfileCard /></Container>
+                    <Container><Section1 scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
                     <Container></Container>
                     <Container><ProfileCard /></Container>
                     <Container><ProfileCard /></Container>

@@ -312,7 +312,7 @@
 
 .NameEnterActive {
     transform: translateY(0%);
-    transition: transform 400ms ease-in-out;
+    transition: transform 250ms ease-in-out;
 }
 
 .NameExit {
@@ -321,7 +321,7 @@
 
 .NameExitActive {
     transform: translateY(-100%);
-    transition: transform 400ms ease-in-out;
+    transition: transform 250ms ease-in-out;
 }
 
 .NameContainerEnter {

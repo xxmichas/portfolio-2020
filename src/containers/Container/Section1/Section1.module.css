@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.ScrollNotification {
+    color: #ccc;
+    font-size: 1em;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: -30px;
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2.5s linear infinite;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+    transition-property: transform, opacity;
+}
+
+.ScrollNotificationActive  {
+    transform: translateY(-60px);
+    opacity: 1;
+}
+  
+@keyframes shine {
+    from { -webkit-mask-position: 150%; }
+    to { -webkit-mask-position: -50%; }
+}
