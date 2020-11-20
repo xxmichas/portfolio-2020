@@ -18,7 +18,7 @@ const ProfileCard = () => {
             setName(newName)
             setTimeout(() => {
                 setName("Michael Orkisz")
-            }, 1000);
+            }, 2000);
         }
     }
 
@@ -28,21 +28,31 @@ const ProfileCard = () => {
                 <div className={styles.BackgroundContainer}>
                     <div className={styles.Background} />
                 </div>
-                <div className={styles.NameContainer}>
-                    <SwitchTransition mode="out-in">
-                        <CSSTransition addEndListener={(node, done) => {node.addEventListener("transitionend", done, false);}} 
-                            classNames={{
-                                enter: styles.NameEnter,
-                                enterActive: styles.NameEnterActive,
-                                exit: styles.NameExit,
-                                exitActive: styles.NameExitActive,
-                            }} key={Name}>
-                            <div className={styles.Name}>
-                                {Name}
-                            </div>
-                        </CSSTransition>
-                    </SwitchTransition>
-                </div>
+                <CSSTransition in={Hovered} classNames={{
+                    enterActive: styles.NameContainerEnterActive,
+                    enterDone: styles.NameContainerEnterDone,
+                    exitActive: styles.NameContainerExitActive,
+                    exitDone: styles.NameContainerExitDone
+                }} addEndListener={(node, done) => {
+                    // use the css transitionend event to mark the finish of a transition
+                    node.addEventListener('transitionend', done, false);
+                  }}>
+                    <div className={styles.NameContainer}>
+                        <SwitchTransition mode="out-in">
+                            <CSSTransition addEndListener={(node, done) => {node.addEventListener("transitionend", done, false);}} 
+                                classNames={{
+                                    enter: styles.NameEnter,
+                                    enterActive: styles.NameEnterActive,
+                                    exit: styles.NameExit,
+                                    exitActive: styles.NameExitActive,
+                                }} key={Name}>
+                                <div className={`${styles.Name} ${Name === "Copied!" ? styles.Copied : ""}`}>
+                                    {Name}
+                                </div>
+                            </CSSTransition>
+                        </SwitchTransition>
+                    </div>
+                </CSSTransition>
                 <img className={styles.Picture} src={profilePicture} alt="Profile" />
                 <span className={`${styles.TextShadow} ${styles.Title}`}>Michael Orkisz</span>
                 <span className={styles.TextShadow} style={{fontSize: "1.25em", marginBlockEnd: "1em"}}>- Aspiring Web Developer -</span>
@@ -62,7 +72,7 @@ const ProfileCard = () => {
                                     enterDone: styles.IconsEnterDone,
                                     exitActive: styles.IconsExitActive,
                                     exitDone: styles.IconsExitDone
-                                }} timeout={250}>
+                                }} timeout={300}>
                                     {state2 => {
                                         return (
                                             <div className={styles.Icons}>
@@ -72,7 +82,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
+                                                    <div className={styles.Socials} onClick={() => setNameHandler("Copied!")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={state2 === "entered"} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
