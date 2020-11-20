@@ -21,8 +21,8 @@ const ProfileCard = () => {
                 <img className={styles.Picture} src={profilePicture} alt="Profile" />
                 <span className={`${styles.TextShadow} ${styles.Title}`}>Michael Orkisz</span>
                 <span className={styles.TextShadow} style={{fontSize: "1.25em", marginBlockEnd: "1em"}}>- Aspiring Web Developer -</span>
-                <p>Hi, My name is Michael. I am an Aspiring Web Developer, mainly working in JavaScript, HTML, CSS & Node.js</p>
-                <p>I like C# and making games in unity (but as a side hobby)</p>
+                <p className={styles.Description}>Hi, My name is Michael. I am an Aspiring Web Developer, mainly working in JavaScript, HTML, CSS & Node.js</p>
+                <p className={styles.Description}>I like C# and making games in unity (but as a side hobby)</p>
                 <CSSTransition in={Hovered} classNames={{
                     enterActive: styles.OverlayEnterActive,
                     enterDone: styles.OverlayEnterDone,
@@ -55,7 +55,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
+                                                    <div className={styles.Socials} onClick={() => window.open("https://github.com/xxmichas")}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={state2 === "entered"} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
@@ -71,7 +71,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
+                                                    <div className={styles.Socials} onClick={() => window.open("https://steamcommunity.com/id/xxmichas")}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
                                                 </CSSTransition>
                                                 <CSSTransition in={state2 === "entered"} classNames={{
                                                     enterActive: styles.SocialsEnterActive,
@@ -79,7 +79,7 @@ const ProfileCard = () => {
                                                     exitActive: styles.SocialsExitActive,
                                                     exitDone: styles.SocialsExitActive
                                                 }} timeout={300}>
-                                                    <div className={styles.Socials}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
+                                                    <div className={styles.Socials} onClick={() => window.open("https://twitter.com/xxmichas")}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
                                                 </CSSTransition>
                                             </div>
                                         )
