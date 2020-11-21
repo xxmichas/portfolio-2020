@@ -117,9 +117,13 @@ th {
     padding: 0.5em;
     padding-left: 1em;
     font-size: 1.25em;
-    border-bottom: 2px solid black;
+    border-top: 2px solid black;
     text-shadow: 10px 10px 15px rgba(0,0,0,0.3);
     backface-visibility: hidden;
+}
+
+.Panel .Table:first-child th {
+    border: none;
 }
 
 .THeadingEnterActive {
