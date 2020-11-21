@@ -63,7 +63,7 @@
 }
 
 .Filler {
-    background-color: white;
+    background-color:#465AA6;
     flex-grow: 1;
 }
 
@@ -73,7 +73,8 @@ thead, thead tr, tbody {
 }
 
 thead {
-    background-image: url("../../../assets/background.png");
+    /* background-image: url("../../../assets/background.png"); */
+    background-color: #2B3866;
 }
 
 thead tr {
@@ -86,15 +87,16 @@ td {
     color: rgba(0, 0, 0, 0.55);
     padding: 0.5em;
     padding-left: 1em;
+    color: #ccc;
 }
 
 tr {
     display: flex;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #364680;
 }
 
 tbody tr {
-    background-color: white;
+    background-color: #465AA6;
 }
 
 tr:last-child {
