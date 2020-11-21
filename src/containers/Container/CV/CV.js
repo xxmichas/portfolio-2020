@@ -55,6 +55,7 @@ const CV = (props) => {
                             </tr>
                         </tbody>
                     </table>
+                    <div className={styles.Filler} />
                 </div>
                 <div className={`${styles.Panel} ${styles.PanelThin}`}>
                     <table className={styles.Table}>
@@ -101,6 +102,7 @@ const CV = (props) => {
                             </tr>
                         </tbody>
                     </table>
+                    <div className={styles.Filler} />
                 </div>
             </div>
             <div className={`${styles.Panel} ${styles.PanelWide} ${Focused ? styles.PanelWideActive : null}`}>
@@ -176,6 +178,7 @@ const CV = (props) => {
                         </tr>
                     </tbody>
                 </table>
+                <div className={styles.Filler} />
             </div>
         </div>
     )
