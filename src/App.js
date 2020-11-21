@@ -46,7 +46,7 @@ class App extends Component {
             }
         }
     }
-
+    //zmienic zeby bylo tylko na pierwsza karte
     ChangeHandler = (direction) => {
         if (direction != null) {
             setTimeout(() => {

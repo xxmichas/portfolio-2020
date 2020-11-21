@@ -11,7 +11,7 @@ const CV = (props) => {
         exitActive: styles.THeadingExitActive,
         exitDone: styles.THeadingExitDone}, timeout: {enter: 800, exit: 500}
     }
-    
+
     useEffect(() => {
         if (props.currentSection === 2) {
             if (!Focused) {
@@ -22,9 +22,10 @@ const CV = (props) => {
             setFocused(false)
         }
     }, [Focused, props.currentSection])
+    
     return (
         <div className={styles.PanelsContainer}>
-            <div className={styles.PanelGroup}>
+            <div className={`${styles.PanelGroup} ${Focused ? styles.PanelGroupActive : null}`}>
                 <div className={`${styles.Panel} ${styles.PanelThin}`}>
                     <table className={styles.Table}>
                         <thead>
@@ -102,7 +103,7 @@ const CV = (props) => {
                     </table>
                 </div>
             </div>
-            <div className={`${styles.Panel} ${styles.PanelWide}`}>
+            <div className={`${styles.Panel} ${styles.PanelWide} ${Focused ? styles.PanelWideActive : null}`}>
                 <table className={styles.Table}>
                     <thead>
                         <tr>
@@ -157,7 +158,6 @@ const CV = (props) => {
                             <CSSTransition {...THeadingConfig}>
                                 <th>Additional qualifications</th>
                             </CSSTransition>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody className={styles.TBodyQuals}>
