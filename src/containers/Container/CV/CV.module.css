@@ -29,7 +29,7 @@
 
 .PanelGroupActive {
     transform: translateX(0%);
-    transition: transform 500ms 350ms cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transition: transform 500ms 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
 .PanelWide {
@@ -40,7 +40,7 @@
 
 .PanelWideActive {
     transform: translateX(0%);
-    transition: transform 500ms 350ms cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transition: transform 500ms 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
 .PanelThin {
