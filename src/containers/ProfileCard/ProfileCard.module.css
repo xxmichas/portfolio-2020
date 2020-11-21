@@ -43,7 +43,7 @@
     background-position-y: 0px;
     background-size: cover;
 }
-
+/* we need to use black background or the background image will have ugly white corners */
 .BackgroundContainer {
     width: 100%;
     height: 190px;
