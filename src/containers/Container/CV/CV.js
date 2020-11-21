@@ -158,6 +158,7 @@ const CV = (props) => {
                             <CSSTransition {...THeadingConfig}>
                                 <th>Additional qualifications</th>
                             </CSSTransition>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody className={styles.TBodyQuals}>

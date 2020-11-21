@@ -32,7 +32,6 @@
 }
 
 .PanelWide {
-    background-color: black;
     width: 55%;
     transform: translateX(115%) rotate(0.0001deg);
     transition: transform 1ms 450ms ease-in-out;
@@ -44,7 +43,6 @@
 }
 
 .PanelThin {
-    background-color: black;
     width: 100%;
     height: 35%;
 }
