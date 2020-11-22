@@ -90,9 +90,6 @@ class App extends Component {
                     <Container><ProfileCard /></Container>
                     <Container><ProfileCard /></Container>
                 </div>
-                <button style={{position: "fixed", top: "0", right: "60px"}} onClick={() => this.ChangeSection(4)}>last</button>
-                <button style={{position: "fixed", top: "0", right: "30px"}} onClick={() => this.ChangeSection(this.state.currentSection - 1)}>-1</button>
-                <button style={{position: "fixed", top: "0", right: "0"}} onClick={() => this.ChangeSection(this.state.currentSection + 1)}>+1</button>
             </Fragment>
         )
     }
