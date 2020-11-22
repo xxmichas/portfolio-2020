@@ -120,6 +120,7 @@ th {
     border-top: 2px solid black;
     text-shadow: 10px 10px 15px rgba(0,0,0,0.3);
     backface-visibility: hidden;
+    transition: transform 400ms ease-in-out;
 }
 
 .Panel .Table:first-child th {
@@ -127,7 +128,7 @@ th {
 }
 
 .THeadingEnterActive {
-    animation: THeadingEnabled 1750ms cubic-bezier(0.175, 0.885, 0.32, 1);
+    transform: translateX(-100%);
 }
 
 .THeadingEnterDone {
@@ -135,33 +136,11 @@ th {
 }
 
 .THeadingExitActive {
-    animation: THeadingDisabled 500ms ease-in-out;
+    transform: translateX(0%);
 }
 
 .THeadingExitDone {
     transform: translateX(0%);
-    opacity: 0;
-}
-
-@keyframes THeadingEnabled {
-    0% {
-        transform: translateX(-100%);
-    }
-    70% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-@keyframes THeadingDisabled {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
 }
 
 .TBodyQuals td {

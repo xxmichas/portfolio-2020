@@ -9,7 +9,7 @@ const CV = (props) => {
         enterActive: styles.THeadingEnterActive,
         enterDone: styles.THeadingEnterDone,
         exitActive: styles.THeadingExitActive,
-        exitDone: styles.THeadingExitDone}, timeout: {enter: 1750, exit: 500}
+        exitDone: styles.THeadingExitDone}, timeout: {enter: 1250, exit: 500}
     }
 
     useEffect(() => {
