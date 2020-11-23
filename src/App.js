@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import Container from './containers/Container/Container'
-import CV from './containers/CV/CV'
-import Section1 from './containers/Section1/Section1'
 import ProfileCard from './containers/ProfileCard/ProfileCard'
+import Section1 from './containers/Section1/Section1'
+import Section2 from './containers/Section2/Section2'
 
 class App extends Component {
     state = {
@@ -86,7 +86,7 @@ class App extends Component {
             <Fragment>
                 <div style={{pointerEvents: "none", position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0.19, 1, 0.22, 1)`}}>
                     <Container><Section1 scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
-                    <Container><CV currentSection={this.state.currentSection} /></Container>
+                    <Container><Section2 currentSection={this.state.currentSection} /></Container>
                     <Container><ProfileCard /></Container>
                     <Container><ProfileCard /></Container>
                 </div>

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ProjectCard from '../ProjectCard/ProjectCard'
 import styles from './Section1.module.css'
 

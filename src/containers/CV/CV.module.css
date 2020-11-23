@@ -4,7 +4,7 @@
     height: 100%;
     align-items: center;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 /* we need to use black background or the background image will have ugly white corners */
 .Panel {
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transform: translateX(-125%) rotate(0.0001deg);
+    transform: translateX(-130%) rotate(0.0001deg);
     transition: transform 1ms 450ms ease-in-out;
 }
 
