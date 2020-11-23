@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import ProfileCard from '../../ProfileCard/ProfileCard'
+import ProfileCard from '../ProfileCard/ProfileCard'
 import styles from './Section1.module.css'
 
 const Section1 = (props) => {

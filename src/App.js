@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Container from './containers/Container/Container'
-import CV from './containers/Container/CV/CV'
-import Section1 from './containers/Container/Section1/Section1'
+import CV from './containers/CV/CV'
+import Section1 from './containers/Section1/Section1'
 import ProfileCard from './containers/ProfileCard/ProfileCard'
 
 class App extends Component {
