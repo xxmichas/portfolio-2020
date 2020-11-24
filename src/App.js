@@ -3,6 +3,7 @@ import Container from './containers/Container/Container'
 import ProfileCard from './containers/ProfileCard/ProfileCard'
 import Section1 from './containers/Section1/Section1'
 import Section2 from './containers/Section2/Section2'
+import Section3 from './containers/Section3/Section3'
 
 class App extends Component {
     state = {
@@ -85,9 +86,9 @@ class App extends Component {
         return (
             <Fragment>
                 <div style={{pointerEvents: "none", position: "relative", top: `${(this.state.currentSection - 1) * (-100)}vh`, transition: `top ${this.state.transitionTime}ms cubic-bezier(0.19, 1, 0.22, 1)`}}>
-                    <Container><Section1 scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
+                    <Container><Section1 currentSection={this.state.currentSection} scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
                     <Container><Section2 currentSection={this.state.currentSection} /></Container>
-                    <Container><ProfileCard /></Container>
+                    <Container><Section3 currentSection={this.state.currentSection} /></Container>
                     <Container><ProfileCard /></Container>
                 </div>
             </Fragment>
