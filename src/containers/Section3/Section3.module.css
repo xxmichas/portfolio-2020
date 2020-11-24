@@ -1,8 +1,8 @@
 .Projects {
-    width: 86%;
-    height: 70%;
-    padding: 15% 7%;
-    pointer-events: all;
+    height: 50%;
+    width: 100%;
+    padding: 15% 0;
+    color: white;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
 }

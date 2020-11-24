@@ -1,7 +1,8 @@
 .Card {
     position: relative;
-    width: 50%;
-    height: 400px;
+    width: 41vw;
+    height: 50vh;
+    margin: 0 1vw;
     background-color: black;
     background-size: cover;
     background-position-x: 50%;
