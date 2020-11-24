@@ -1,11 +1,11 @@
 .Card {
     position: relative;
-    width: 25%;
-    height: 30%;
+    width: 50%;
+    height: 400px;
     background-color: black;
     background-size: cover;
+    background-position-x: 50%;
     border-radius: 15px;
-    margin-left: 0.1px;
     pointer-events: all;
 }
 

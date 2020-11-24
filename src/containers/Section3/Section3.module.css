@@ -1,8 +1,8 @@
 .Projects {
-    width: 100%;
+    width: 86%;
     height: 70%;
-    padding: 15% 0;
+    padding: 15% 7%;
+    pointer-events: all;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
 }

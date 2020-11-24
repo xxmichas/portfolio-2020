@@ -34,7 +34,7 @@
 }
 
 .PanelWide {
-    width: 55%;
+    width: 54%;
     transform: translateX(115%) rotate(0.0001deg);
     transition: transform 1ms 450ms ease-in-out;
 }
