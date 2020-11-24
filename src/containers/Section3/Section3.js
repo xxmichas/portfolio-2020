@@ -17,6 +17,14 @@ const Section3 = (props) => {
     SwiperCore.use([Navigation]);
 
     const [page, setPage] = useState(0)
+    let Cards = [
+        <ProjectCard key={0} active={page === 0} background={NTDF} centered={true} title="Nature TD: Forest" description="3D Unity Game" modal={null} />,
+        <ProjectCard key={1} active={page === 1} background={SAU} centered={false} title="Steam Achievement Unlocker" description="JavaScript Desktop App" modal={null} />,
+        <ProjectCard key={2} active={page === 2} background={VR} centered={true} title="Vertical Runner" description="2D Unity Game" modal={null} />,
+        <ProjectCard key={3} active={page === 3} background={Server} centered={false} title="Web Server in Node.js" description="HTTP Server With Authentication And Tokens" modal={null} />,
+        <ProjectCard key={4} active={page === 4} background={Portfolio} centered={true} title="Portfolio Website in React" description="My Portfolio Website Built With React" modal={null} />,
+        <ProjectCard key={5} active={page === 5} background={Bot} centered={true} title="Discord bot in Node.js" description="Discord Bot Using Discord.js Library" modal={null} />
+    ]
 
     return (
         <Fragment>
@@ -27,12 +35,7 @@ const Section3 = (props) => {
                         slidesPerView={2} preventInteractionOnTransition
                         navigation loop centeredSlides
                         onSlideChange={(swiper) => {setPage(swiper.realIndex)}}>
-                        <SwiperSlide><ProjectCard background={NTDF} centered={true} title="Nature TD: Forest" description="3D Unity Game" modal={null} /></SwiperSlide>
-                        <SwiperSlide><ProjectCard background={SAU} centered={false} title="Steam Achievement Unlocker" description="JavaScript Desktop App" modal={null} /></SwiperSlide>
-                        <SwiperSlide><ProjectCard background={VR} centered={true} title="Vertical Runner" description="2D Unity Game" modal={null} /></SwiperSlide>
-                        <SwiperSlide><ProjectCard background={Server} centered={false} title="Web Server in Node.js" description="HTTP Server With Authentication And Tokens" modal={null} /></SwiperSlide>
-                        <SwiperSlide><ProjectCard background={Portfolio} centered={true} title="Portfolio Website in React" description="My Portfolio Website Built With React" modal={null} /></SwiperSlide>
-                        <SwiperSlide><ProjectCard background={Bot} centered={true} title="Discord bot in Node.js" description="Discord Bot Using Discord.js Library" modal={null} /></SwiperSlide>
+                        {Cards.map((el, i) => (<SwiperSlide key={i}>{el}</SwiperSlide>))}
                     </Swiper>
                 </div>
             </div>
