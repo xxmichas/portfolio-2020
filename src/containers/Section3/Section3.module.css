@@ -9,12 +9,11 @@
 }
 
 .Pagination {
-    width: 100%;
     position: relative;
     right: 0;
     top: 0em;
     color: white;
     font-weight: 700;
     font-size: 1em;
-    text-align: right;
+    text-align: center;
 }
