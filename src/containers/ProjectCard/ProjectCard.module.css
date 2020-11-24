@@ -1,8 +1,8 @@
 .Card {
     position: relative;
-    width: 41vw;
+    width: 46vw;
     height: 50vh;
-    margin: 0 1vw;
+    margin: 0 2vw;
     background-color: black;
     background-size: cover;
     border-radius: 15px;
@@ -23,8 +23,8 @@
 .Footer {
     position: absolute;
     bottom: 0;
-    padding: 0.5em 1em;
-    width: 100%;
+    padding: 0em 1em;
+    width: calc(100% - 2em);
     word-break: break-word;
     color: white;
 }
@@ -37,4 +37,5 @@
 
 .Description {
     font-size: 0.7em;
+    margin-bottom: 1em;
 }
