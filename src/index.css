@@ -15,4 +15,13 @@ html, body {
 
 .swiper-button-prev, .swiper-button-next {
     color: rgba(255, 255, 255, 0.7) !important;
+    transform: scale(1.5) !important;
+}
+
+.swiper-button-prev {
+    left: 2em !important;
+}
+
+.swiper-button-next {
+    right: 2em !important;
 }
