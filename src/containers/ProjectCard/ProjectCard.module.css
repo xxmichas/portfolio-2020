@@ -41,13 +41,18 @@
 
 .Box {
     width: calc(100% - 4em);
-    padding: 4em 2em;
+    padding: 4em 2em 1em 2em;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     overflow: hidden;
     word-break: break-word;
+    text-transform: capitalize;
     text-shadow: 5px 5px 5px rgba(0,0,0,0.7);
     transition: 250ms ease-in-out;
+}
+
+.Button {
+    border: 1px solid black;
 }
 
 .CurrentCard:hover .Overlay {

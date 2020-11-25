@@ -8,7 +8,11 @@ const ProjectCard = (props) => {
             backgroundPositionX: "50%"
         }
     }
-    console.log(props.info)
+    
+    const OpenTab = (url) => {
+        window.open(url)
+    }
+
     return (
         <div className={`${styles.Card} ${props.active ? styles.CurrentCard : null}`} style={{backgroundImage: `url(${props.background})`, ...centered}}>
             <div className={styles.Footer}>
@@ -23,6 +27,11 @@ const ProjectCard = (props) => {
                 <div className={styles.Box}>
                     {props.info}
                 </div>
+                {props.buttons.map((el, i) => (
+                    <div key={i} onClick={() => el.url !== null ? OpenTab(el.url) : el.func()} className={styles.Button}>
+                        {el.name}
+                    </div>
+                ))}
             </div>
         </div>
     )
