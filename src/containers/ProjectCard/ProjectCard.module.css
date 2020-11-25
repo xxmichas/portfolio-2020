@@ -7,9 +7,8 @@
     background-size: cover;
     border-radius: 15px;
     pointer-events: all;
-    transform: translate(-0.5rem, -0.5rem) scale(1.05);
-    filter: blur(2px);
-    transition: filter 500ms ease-in-out;
+    filter: blur(3px);
+    transition: filter 300ms ease-in-out;
 }
 
 .Card::before {
