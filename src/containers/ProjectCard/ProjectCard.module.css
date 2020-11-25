@@ -59,6 +59,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    pointer-events: none;
+}
+
+.CurrentCard:hover .ButtonsContainer {
+    pointer-events: all;
 }
 
 .Button {
