@@ -8,7 +8,7 @@ const ProjectCard = (props) => {
             backgroundPositionX: "50%"
         }
     }
-
+    console.log(props.info)
     return (
         <div className={`${styles.Card} ${props.active ? styles.CurrentCard : null}`} style={{backgroundImage: `url(${props.background})`, ...centered}}>
             <div className={styles.Footer}>
@@ -17,6 +17,11 @@ const ProjectCard = (props) => {
                 </div>
                 <div className={styles.Description}>
                     {props.description}
+                </div>
+            </div>
+            <div className={styles.Overlay}>
+                <div className={styles.Box}>
+                    {props.info}
                 </div>
             </div>
         </div>

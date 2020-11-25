@@ -18,12 +18,12 @@ const Section3 = (props) => {
 
     const [page, setPage] = useState(0)
     let Cards = [
-        <ProjectCard key={0} active={page === 0} background={NTDF} centered={true} title="Nature TD: Forest" description="3D Unity Game" modal={null} />,
-        <ProjectCard key={1} active={page === 1} background={SAU} centered={false} title="Steam Achievement Unlocker" description="JavaScript Desktop App" modal={null} />,
-        <ProjectCard key={2} active={page === 2} background={VR} centered={true} title="Vertical Runner" description="2D Unity Game" modal={null} />,
-        <ProjectCard key={3} active={page === 3} background={Server} centered={false} title="Web Server in Node.js" description="HTTP Server With Authentication And Tokens" modal={null} />,
-        <ProjectCard key={4} active={page === 4} background={Portfolio} centered={true} title="Portfolio Website in React" description="My Portfolio Website Built With React" modal={null} />,
-        <ProjectCard key={5} active={page === 5} background={Bot} centered={true} title="Discord bot in Node.js" description="Discord Bot Using Discord.js Library" modal={null} />
+        <ProjectCard key={0} active={page === 0} background={NTDF} centered={true} title="Nature TD: Forest" description="3D Unity Game" info="3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME 3D GAME " modal={null} />,
+        <ProjectCard key={1} active={page === 1} background={SAU} centered={false} title="Steam Achievement Unlocker" description="JavaScript Desktop App" info="3D GAME" modal={null} />,
+        <ProjectCard key={2} active={page === 2} background={VR} centered={true} title="Vertical Runner" description="2D Unity Game" info="3D GAME" modal={null} />,
+        <ProjectCard key={3} active={page === 3} background={Server} centered={false} title="Web Server in Node.js" description="HTTP Server With Authentication And Tokens" info="3D GAME" modal={null} />,
+        <ProjectCard key={4} active={page === 4} background={Portfolio} centered={true} title="Portfolio Website in React" description="My Portfolio Website Built With React" info="3D GAME" modal={null} />,
+        <ProjectCard key={5} active={page === 5} background={Bot} centered={true} title="Discord bot in Node.js" description="Discord Bot Using Discord.js Library" info="3D GAME" modal={null} />
     ]
 
     return (

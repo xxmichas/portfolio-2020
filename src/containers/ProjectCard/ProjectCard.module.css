@@ -7,6 +7,7 @@
     background-size: cover;
     border-radius: 15px;
     pointer-events: all;
+    overflow: hidden;
     filter: blur(3px);
     transition: filter 300ms ease-in-out;
 }
@@ -14,12 +15,47 @@
 .Card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -2.5%;
+    left: -2.5%;
+    width: 105%;
+    height: 105%;
+    transform: rotate(180deg);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+    background-size: 100% 200%;
+    transition: 250ms ease-in-out;
+}
+
+.CurrentCard:hover:before {
+    background-size: 100% 600%;
+}
+
+.Overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.7) 100%);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 250ms ease-in-out;
+}
+
+.Box {
+    width: calc(100% - 4em);
+    padding: 4em 2em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+    transition: 250ms ease-in-out;
+}
+
+.CurrentCard:hover .Overlay {
+    opacity: 1;
+}
+
+.CurrentCard:hover .Box {
+    transform: none;
 }
 
 .CurrentCard {
@@ -33,6 +69,7 @@
     width: calc(100% - 2em);
     word-break: break-word;
     color: white;
+    z-index: 10;
 }
 
 .Title {
