@@ -120,7 +120,7 @@ th {
     border-top: 2px solid black;
     text-shadow: 10px 10px 15px rgba(0,0,0,0.3);
     backface-visibility: hidden;
-    transition: transform 400ms ease-in-out;
+    transition: transform 700ms ease-in-out;
 }
 
 .Panel .Table:first-child th {
