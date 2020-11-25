@@ -43,24 +43,37 @@
     width: calc(100% - 4em);
     padding: 4em 2em 1em 2em;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
     text-align: center;
     overflow: hidden;
     word-break: break-word;
     text-transform: capitalize;
     text-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-    transition: 250ms ease-in-out;
+}
+
+.ButtonsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .Button {
-    border: 1px solid black;
+    margin: 1em;
+    padding: 0.75em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: all 150ms linear;
+}
+
+.Button:hover {
+    border: 1px solid #bbb;
+    color: #bbb;
 }
 
 .CurrentCard:hover .Overlay {
     opacity: 1;
-}
-
-.CurrentCard:hover .Box {
-    transform: none;
 }
 
 .CurrentCard {

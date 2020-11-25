@@ -27,11 +27,13 @@ const ProjectCard = (props) => {
                 <div className={styles.Box}>
                     {props.info}
                 </div>
-                {props.buttons.map((el, i) => (
-                    <div key={i} onClick={() => el.url !== null ? OpenTab(el.url) : el.func()} className={styles.Button}>
-                        {el.name}
-                    </div>
-                ))}
+                <div className={styles.ButtonsContainer}>
+                    {props.buttons.map((el, i) => (
+                        <div key={i} onClick={() => el.url !== null ? OpenTab(el.url) : el.func()} className={styles.Button}>
+                            {el.name}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
