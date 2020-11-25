@@ -1,1 +1,3 @@
-# My Portfolio Website Created in React. Available at xxmichas.com
+# My Portfolio Website Created in React.
+
+# Available at xxmichas.com
