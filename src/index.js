@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import Fluid from './containers/Fluid/Fluid';
 
+
+const MobileBrowser = !(window.matchMedia("(pointer: coarse)").matches);
+
 ReactDOM.render(
     <React.StrictMode>
         <App />
@@ -11,9 +14,11 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Fluid />
-    </React.StrictMode>,
-    document.getElementById('fluid-background')
-)
+if (MobileBrowser) {
+    ReactDOM.render(
+        <React.StrictMode>
+            <Fluid />
+        </React.StrictMode>,
+        document.getElementById('fluid-background')
+    )
+}

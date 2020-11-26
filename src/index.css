@@ -6,7 +6,8 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 #root {
@@ -24,4 +25,11 @@ html, body {
 
 .swiper-button-next {
     right: 2em !important;
+}
+
+@media (pointer: coarse) { 
+    html, body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
