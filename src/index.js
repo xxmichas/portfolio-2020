@@ -5,16 +5,16 @@ import App from './App';
 import Fluid from './containers/Fluid/Fluid';
 
 
-const MobileBrowser = !(window.matchMedia("(pointer: coarse)").matches);
+const DesktopBrowser = !(window.matchMedia("(pointer: coarse)").matches);
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <App DesktopBrowser={DesktopBrowser} />
     </React.StrictMode>,
     document.getElementById('root')
 )
 
-if (MobileBrowser) {
+if (DesktopBrowser) {
     ReactDOM.render(
         <React.StrictMode>
             <Fluid />

@@ -5,13 +5,17 @@ import Section2 from './containers/Section2/Section2'
 import Section3 from './containers/Section3/Section3'
 
 class App extends Component {
-    state = {
-        currentSection: 1,
-        sectionCount: 3,
-        changeCooldown: false,
-        transitionTime: 500,
-        scrollNotification: false,
-        firstScroll: true
+    constructor (props) {
+        super(props)
+        this.state = {
+            currentSection: 1,
+            sectionCount: 3,
+            changeCooldown: false,
+            transitionTime: 500,
+            scrollNotification: false,
+            firstScroll: true
+        }
+        console.log(`${this.props.DesktopBrowser ? "Desktop Version" : "Mobile Version"}`)
     }
 
     ChangeSection = (nextSection) => {
