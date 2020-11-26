@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react'
-import Anime from 'react-anime'
 import styles from './SectionTitle.module.css'
+import Anime from 'react-anime'
 
 const SectionTitle = (props) => {
-
     const Title = useRef(null)
     useEffect(() => {
         if (props.show) {

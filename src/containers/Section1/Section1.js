@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
+import styles from './Section1.module.css'
 import ProfileCard from '../ProfileCard/ProfileCard'
 import SectionTitle from '../SectionTitle/SectionTitle'
-import styles from './Section1.module.css'
 
 const Section1 = (props) => {
     let ScrollNotificationStyles = [styles.ScrollNotification]

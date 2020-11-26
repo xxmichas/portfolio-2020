@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import styles from './Section3.module.css'
-import ProjectCard from '../ProjectCard/ProjectCard'
-import SectionTitle from '../SectionTitle/SectionTitle'
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import ProjectCard from '../ProjectCard/ProjectCard'
+import SectionTitle from '../SectionTitle/SectionTitle'
 import NTDF from '../../assets/projects/NTDF.png'
 import VR from '../../assets/projects/VR.png'
 import Portfolio from '../../assets/projects/portfolio.png'
@@ -13,7 +13,6 @@ import Bot from '../../assets/projects/bot.png'
 import Server from '../../assets/projects/server.png'
 
 const Section3 = (props) => {
-
     SwiperCore.use([Navigation]);
 
     const [page, setPage] = useState(0)

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import Container from './containers/Container/Container'
-import ProfileCard from './containers/ProfileCard/ProfileCard'
 import Section1 from './containers/Section1/Section1'
 import Section2 from './containers/Section2/Section2'
 import Section3 from './containers/Section3/Section3'
@@ -8,7 +7,7 @@ import Section3 from './containers/Section3/Section3'
 class App extends Component {
     state = {
         currentSection: 1,
-        sectionCount: 4,
+        sectionCount: 3,
         changeCooldown: false,
         transitionTime: 500,
         scrollNotification: false,
@@ -39,7 +38,7 @@ class App extends Component {
             }
         }
     }
-    
+
     ChangeHandler = () => {
         if (this.state.currentSection === 1) {
             setTimeout(() => {
@@ -80,7 +79,6 @@ class App extends Component {
                     <Container><Section1 currentSection={this.state.currentSection} scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
                     <Container><Section2 currentSection={this.state.currentSection} /></Container>
                     <Container><Section3 currentSection={this.state.currentSection} /></Container>
-                    <Container><ProfileCard /></Container>
                 </div>
             </Fragment>
         )
