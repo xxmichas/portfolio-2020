@@ -6,8 +6,8 @@ const Section2 = (props) => {
 
     return (
         <Fragment>
-            <CV currentSection={props.currentSection} />
-            <SectionTitle show={props.currentSection === 2 ? true : false} textLeft="My&nbsp;" textRight="CV" />
+            <CV show={props.showTitle} />
+            <SectionTitle show={props.showTitle} textLeft="My&nbsp;" textRight="CV" />
        </Fragment>
     )
 }

@@ -12,7 +12,7 @@ const CV = (props) => {
     }
 
     useEffect(() => {
-        if (props.currentSection === 2) {
+        if (props.show) {
             if (!Focused) {
                 setFocused(true)
             }
@@ -20,7 +20,7 @@ const CV = (props) => {
         else {
             setFocused(false)
         }
-    }, [Focused, props.currentSection])
+    }, [Focused, props.show])
     
     return (
         <div className={styles.PanelsContainer}>

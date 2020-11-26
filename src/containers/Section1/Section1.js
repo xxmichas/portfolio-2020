@@ -13,7 +13,7 @@ const Section1 = (props) => {
         <Fragment>
             <ProfileCard />
             {props.firstScroll ? <div className={ScrollNotificationStyles.join(" ")}>use mouse wheel to go to the next section</div> : null}
-            <SectionTitle show={props.currentSection === 1 ? true : false} textMiddle="xxmichas.com" />
+            <SectionTitle show={props.showTitle} textMiddle="xxmichas.com" />
         </Fragment>
     )
 }

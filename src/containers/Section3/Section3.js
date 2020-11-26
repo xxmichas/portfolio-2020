@@ -38,7 +38,7 @@ const Section3 = (props) => {
                     </Swiper>
                 </div>
             </div>
-            <SectionTitle show={props.currentSection === 3 ? true : false} textLeft="My&nbsp;" textRight="Projects" />
+            <SectionTitle show={props.showTitle} textLeft="My&nbsp;" textRight="Projects" />
         </Fragment>
     )
 }
