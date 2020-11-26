@@ -7,6 +7,7 @@ import Section3 from './containers/Section3/Section3'
 class App extends Component {
     constructor (props) {
         super(props)
+
         this.state = {
             currentSection: 1,
             sectionCount: 3,
@@ -15,7 +16,6 @@ class App extends Component {
             scrollNotification: false,
             firstScroll: true
         }
-        console.log(`${this.props.DesktopBrowser ? "Desktop Version" : "Mobile Version"}`)
     }
 
     ChangeSection = (nextSection) => {
@@ -60,29 +60,31 @@ class App extends Component {
     }
 
     componentDidMount = () => {
-        window.addEventListener("wheel", (e) => {
-            if (e.deltaY > 0) {
-                this.ChangeSection(this.state.currentSection + 1)
-            }
-            else if (e.deltaY < 0) {
-                this.ChangeSection(this.state.currentSection - 1)
-            }
-        })
-
-        setTimeout(() => {
-            if (this.state.firstScroll) {
-                this.setState({scrollNotification: true})
-            }
-        }, 2000);
+        if (this.props.DesktopBrowser) {
+            window.addEventListener("wheel", (e) => {
+                if (e.deltaY > 0) {
+                    this.ChangeSection(this.state.currentSection + 1)
+                }
+                else if (e.deltaY < 0) {
+                    this.ChangeSection(this.state.currentSection - 1)
+                }
+            })
+    
+            setTimeout(() => {
+                if (this.state.firstScroll) {
+                    this.setState({scrollNotification: true})
+                }
+            }, 2000);
+        }
     }
 
     render() {
         return (
             <Fragment>
                 <div style={{pointerEvents: "none", position: "relative", top: "0", transform: `translateY(${(this.state.currentSection - 1) * (-100)}vh)`, transition: `transform ${this.state.transitionTime}ms cubic-bezier(0.19, 1, 0.22, 1)`}}>
-                    <Container><Section1 showTitle={this.state.currentSection === 1} scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
-                    <Container><Section2 showTitle={this.state.currentSection === 2} /></Container>
-                    <Container><Section3 showTitle={this.state.currentSection === 3} /></Container>
+                    <Container><Section1 showTitle={this.props.DesktopBrowser ? this.state.currentSection === 1 : false} scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
+                    <Container><Section2 showTitle={this.props.DesktopBrowser ? this.state.currentSection === 2 : false} /></Container>
+                    <Container><Section3 showTitle={this.props.DesktopBrowser ? this.state.currentSection === 3 : false} /></Container>
                 </div>
             </Fragment>
         )
