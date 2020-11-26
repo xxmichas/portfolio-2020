@@ -146,3 +146,50 @@ th {
 .TBodyQuals td {
     width: 100%;
 }
+
+@media (pointer: coarse) {
+    .PanelsContainer {
+        display: flex;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+    }
+
+    .Panel {
+        background-color: black;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        overflow: auto;
+        pointer-events: all;
+        box-shadow: 0 0 3rem 20px rgba(0,0,0, 0.5);
+    }
+
+    .PanelGroup {
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(0%) rotate(0deg);
+    }
+    
+    .PanelWide {
+        width: 95%;
+        height: auto;
+        transform: translateX(0%) rotate(0deg);
+    }
+
+    .PanelThin {
+        width: 100%;
+        height: auto;
+        margin-bottom: 3vh;
+    }
+    
+    .PanelThin:nth-child(2) {
+        width: 100%;
+        height: auto;
+    }
+}
