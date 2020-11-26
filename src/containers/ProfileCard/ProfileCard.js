@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react'
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import styles from './ProfileCard.module.css'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import profilePicture from '../../assets/snoo.png'
-
 import Steam from '../../assets/social/steam.png'
 import Discord from '../../assets/social/discord.png'
 import Gmail from '../../assets/social/gmail.png'

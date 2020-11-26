@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
 import styles from './CV.module.css'
+import { CSSTransition } from 'react-transition-group'
 
 const CV = (props) => {
-
     const [Focused, setFocused] = useState(false)
     const THeadingConfig = {in: Focused, classNames: {
         enterActive: styles.THeadingEnterActive,
