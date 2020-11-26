@@ -17,3 +17,9 @@
     font-size: 1em;
     text-align: center;
 }
+
+@media (pointer: coarse) { 
+    .Swiper {
+        padding-bottom: 20vh;
+    }
+}

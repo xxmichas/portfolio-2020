@@ -29,9 +29,10 @@ const Section3 = (props) => {
         <Fragment>
             <div className={styles.Projects}>
                 <div className={styles.Pagination}>{(page + 1).toString()}/6</div>
-                <div>
+                <div className={styles.Swiper}>
                     <Swiper style={{width: "100vw", pointerEvents: "all"}}
-                        slidesPerView={2} preventInteractionOnTransition
+                        slidesPerView={2} breakpoints={{"@0.25": {slidesPerView: 1}, "@1.0": {slidesPerView: 2}}}
+                        preventInteractionOnTransition
                         navigation loop centeredSlides
                         onSlideChange={(swiper) => {setPage(swiper.realIndex)}}>
                         {Cards.map((el, i) => (<SwiperSlide key={i}>{el}</SwiperSlide>))}

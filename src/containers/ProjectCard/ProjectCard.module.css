@@ -109,3 +109,11 @@
     font-size: 0.7em;
     margin-bottom: 1em;
 }
+
+@media (pointer: coarse) { 
+    .Card {
+        width: 90vw;
+        height: 75vh;
+        margin: 0 5vw;
+    }
+}
