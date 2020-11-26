@@ -21,39 +21,31 @@ class App extends Component {
                 this.setState({scrollNotification: false, firstScroll: false})
             }
 
-            let direction = null
-            if (nextSection > this.state.currentSection) {
-                direction = "["
-            }
-            else if (nextSection < this.state.currentSection) {
-                direction = "]"
-            }
-
             if (nextSection > this.state.sectionCount) {
                 if (this.state.currentSection !== this.state.sectionCount) {
-                    this.setState({changeCooldown: true, currentSection: this.state.sectionCount}, () => this.ChangeHandler(direction))
+                    this.setState({changeCooldown: true, currentSection: this.state.sectionCount}, () => this.ChangeHandler())
                     console.log("Max reached")
                 }
             }
             else if (nextSection < 1) {
                 if (this.state.currentSection !== 1) {
-                    this.setState({changeCooldown: true, currentSection: 1}, () => this.ChangeHandler(direction))
+                    this.setState({changeCooldown: true, currentSection: 1}, () => this.ChangeHandler())
                     console.log("Min reached")
                 }
             }
             else {
-                this.setState({changeCooldown: true, currentSection: nextSection}, () => this.ChangeHandler(direction))
+                this.setState({changeCooldown: true, currentSection: nextSection}, () => this.ChangeHandler())
                 console.log("Changing Section...")
             }
         }
     }
-    //zmienic zeby bylo tylko na pierwsza karte
-    ChangeHandler = (direction) => {
-        if (direction != null) {
+    
+    ChangeHandler = () => {
+        if (this.state.currentSection === 1) {
             setTimeout(() => {
                 window.dispatchEvent(
                     new KeyboardEvent("keydown", {
-                        key: direction,
+                        key: "]",
                         shiftKey: true
                     })
                 )
@@ -66,7 +58,6 @@ class App extends Component {
 
     componentDidMount = () => {
         window.addEventListener("wheel", (e) => {
-            //console.log(e)
             if (e.deltaY > 0) {
                 this.ChangeSection(this.state.currentSection + 1)
             }
