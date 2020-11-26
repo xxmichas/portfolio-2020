@@ -60,6 +60,15 @@ const ProfileCard = () => {
         }
     }
 
+    const SocialsConfig = {
+        classNames: {
+            enterActive: styles.SocialsEnterActive,
+            enterDone: styles.SocialsEnterActive,
+            exitActive: styles.SocialsExitActive,
+            exitDone: styles.SocialsExitActive
+        }
+    }
+
     return (
         <Fragment>
             <div className={styles.Card} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
@@ -119,45 +128,21 @@ const ProfileCard = () => {
                                     {state2 => {
                                         return (
                                             <div className={styles.Icons}>
-                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
-                                                    enterActive: styles.SocialsEnterActive,
-                                                    enterDone: styles.SocialsEnterActive,
-                                                    exitActive: styles.SocialsExitActive,
-                                                    exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 400, exit: 500}} onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} 
-                                                onExited={() => {setSocialsActive(false); setSocialsColapsing(false)}} onExit={() => setSocialsColapsing(true)}>
+                                                <CSSTransition in={SocialsStateHandler(state2)} {...SocialsConfig} timeout={{enter: 400, exit: 500}} 
+                                                    onEnter={() => {setSocialsActive(true); setSocialsExpanding(true);}} 
+                                                    onExited={() => {setSocialsActive(false); setSocialsColapsing(false)}} onExit={() => setSocialsColapsing(true)}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas@gmail.com")}><img src={Gmail} alt="Email" /><p>xxmichas@gmail.com</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
-                                                    enterActive: styles.SocialsEnterActive,
-                                                    enterDone: styles.SocialsEnterActive,
-                                                    exitActive: styles.SocialsExitActive,
-                                                    exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 500, exit: 500}}>
+                                                <CSSTransition in={SocialsStateHandler(state2)} {...SocialsConfig} timeout={{enter: 500, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://github.com/xxmichas")}><img src={Github} alt="Github" /><p>/xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
-                                                    enterActive: styles.SocialsEnterActive,
-                                                    enterDone: styles.SocialsEnterActive,
-                                                    exitActive: styles.SocialsExitActive,
-                                                    exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 600, exit: 500}}>
+                                                <CSSTransition in={SocialsStateHandler(state2)} {...SocialsConfig} timeout={{enter: 600, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => CopyToClipboard("xxmichas#0499")}><img src={Discord} alt="Discord" /><p>xxmichas#0499</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
-                                                    enterActive: styles.SocialsEnterActive,
-                                                    enterDone: styles.SocialsEnterActive,
-                                                    exitActive: styles.SocialsExitActive,
-                                                    exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 700, exit: 500}}>
+                                                <CSSTransition in={SocialsStateHandler(state2)} {...SocialsConfig} timeout={{enter: 700, exit: 500}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://steamcommunity.com/id/xxmichas")}><img src={Steam} alt="Steam" /><p>xxmichas</p></div>
                                                 </CSSTransition>
-                                                <CSSTransition in={SocialsStateHandler(state2)} classNames={{
-                                                    enterActive: styles.SocialsEnterActive,
-                                                    enterDone: styles.SocialsEnterActive,
-                                                    exitActive: styles.SocialsExitActive,
-                                                    exitDone: styles.SocialsExitActive
-                                                }} timeout={{enter: 800, exit: 500}} onEntered={() => {setSocialsExpanding(false);}}>
+                                                <CSSTransition in={SocialsStateHandler(state2)} {...SocialsConfig} timeout={{enter: 800, exit: 500}} onEntered={() => {setSocialsExpanding(false);}}>
                                                     <div className={styles.Socials} onClick={() => window.open("https://twitter.com/xxmichas")}><img src={Twitter} alt="Twitter" /><p>@xxmichas</p></div>
                                                 </CSSTransition>
                                             </div>
