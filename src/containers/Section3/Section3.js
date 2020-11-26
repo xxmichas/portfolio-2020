@@ -28,6 +28,7 @@ const Section3 = (props) => {
     return (
         <Fragment>
             <div className={styles.Projects}>
+                {props.showTitle ? null : <div className={styles.MobileTitle}>My Projects</div>}
                 <div className={styles.Pagination}>{(page + 1).toString()}/6</div>
                 <div className={styles.Swiper}>
                     <Swiper style={{width: "100vw", pointerEvents: "all"}}

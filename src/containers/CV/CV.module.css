@@ -165,7 +165,7 @@ th {
         border-radius: 15px;
         overflow: auto;
         pointer-events: all;
-        box-shadow: 0 0 3rem 20px rgba(0,0,0, 0.5);
+        box-shadow: 0 0 3rem 5px rgba(0,0,0, 0.5);
     }
 
     .PanelGroup {

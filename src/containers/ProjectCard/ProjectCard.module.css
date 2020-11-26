@@ -112,8 +112,21 @@
 
 @media (pointer: coarse) { 
     .Card {
-        width: 90vw;
+        width: 95vw;
         height: 75vh;
-        margin: 0 5vw;
+        margin: 0 2.5vw;
+    }
+    .CurrentCard:hover .ButtonsContainer {
+        pointer-events: none;
+        animation: EnableLinks 250ms linear forwards;
+    }
+}
+
+@keyframes EnableLinks {
+    0% {
+        pointer-events: none;
+    }
+    100% {
+        pointer-events: all;
     }
 }
