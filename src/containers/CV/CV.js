@@ -167,7 +167,7 @@ const CV = (props) => {
                             <td>Great Knowledge of React library and completion of multiple react & redux courses</td>
                         </tr>
                         <tr>
-                            <td><a href="https://www.udemy.com/certificate/UC-69799f4b-e2af-4ba6-b2ff-f923f6db4dd8/">React Udemy Certificate</a></td>
+                            <td><a href="https://www.udemy.com/certificate/UC-69799f4b-e2af-4ba6-b2ff-f923f6db4dd8/" target="_blank" rel="noreferrer">React Udemy Certificate</a></td>
                         </tr>
                         <tr>
                             <td>Created Windows programs using Electron Framework for JavaScript</td>
