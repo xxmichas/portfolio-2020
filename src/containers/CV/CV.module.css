@@ -1,3 +1,7 @@
+a {
+    color: inherit;
+}
+
 .PanelsContainer {
     display: flex;
     width: 100%;
