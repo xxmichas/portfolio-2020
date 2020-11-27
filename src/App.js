@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Container from './containers/Container/Container'
+import PageButtons from './containers/PageButtons/PageButtons'
 import Section1 from './containers/Section1/Section1'
 import Section2 from './containers/Section2/Section2'
 import Section3 from './containers/Section3/Section3'
@@ -74,13 +75,14 @@ class App extends Component {
                 if (this.state.firstScroll) {
                     this.setState({scrollNotification: true})
                 }
-            }, 2000);
+            }, 2500);
         }
     }
-    //Dodac guziki do sekcji
+
     render() {
         return (
             <Fragment>
+                {this.props.DesktopBrowser ? <PageButtons currentSection={this.state.currentSection} changeSection={(s) => this.ChangeSection(s)} sectionCount={this.state.sectionCount} /> : null}
                 <div style={{pointerEvents: "none", position: "relative", top: "0", transform: `translateY(${(this.state.currentSection - 1) * (-100)}vh)`, transition: `transform ${this.state.transitionTime}ms cubic-bezier(0.19, 1, 0.22, 1)`}}>
                     <Container><Section1 showTitle={this.props.DesktopBrowser ? this.state.currentSection === 1 : false} scrollNotification={this.state.scrollNotification} firstScroll={this.state.firstScroll} /></Container>
                     <Container><Section2 showTitle={this.props.DesktopBrowser ? this.state.currentSection === 2 : false} /></Container>

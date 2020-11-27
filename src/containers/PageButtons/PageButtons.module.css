@@ -1,0 +1,40 @@
+.PageButtons {
+    position: fixed;
+    bottom: -5%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    animation: SlideIn 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
+}
+
+.Button {
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    margin: 0 0.5em;
+    text-align: center;
+    pointer-events: all;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 250ms ease-in-out;
+}
+
+.ButtonActive {
+    background-color: white;
+    border-radius: 0.25em;
+    color: black;
+}
+
+@keyframes SlideIn {
+    0% {
+        bottom: -5%;
+    }
+    100% {
+        bottom: 2.5%;
+    }
+}

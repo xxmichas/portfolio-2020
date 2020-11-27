@@ -3,7 +3,7 @@
     font-size: 1em;
     letter-spacing: 2px;
     position: absolute;
-    bottom: -30px;
+    bottom: 2.5%;
     opacity: 0;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
@@ -17,7 +17,7 @@
 }
 
 .ScrollNotificationActive  {
-    transform: translateY(-60px);
+    transform: translateY(-3em);
     opacity: 1;
 }
   
