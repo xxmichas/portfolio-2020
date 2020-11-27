@@ -5,12 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import ProjectCard from '../ProjectCard/ProjectCard'
 import SectionTitle from '../SectionTitle/SectionTitle'
-import NTDF from '../../assets/projects/NTDF.png'
-import VR from '../../assets/projects/VR.png'
-import Portfolio from '../../assets/projects/portfolio.png'
-import SAU from '../../assets/projects/SAU.png'
-import Bot from '../../assets/projects/bot.png'
-import Server from '../../assets/projects/server.png'
+import NTDF from '../../assets/projects/NTDF-min.png'
+import VR from '../../assets/projects/VR-min.png'
+import Portfolio from '../../assets/projects/portfolio-min.png'
+import SAU from '../../assets/projects/SAU-min.png'
+import Bot from '../../assets/projects/bot-min.png'
+import Server from '../../assets/projects/server-min.png'
 
 const Section3 = (props) => {
     SwiperCore.use([Navigation]);

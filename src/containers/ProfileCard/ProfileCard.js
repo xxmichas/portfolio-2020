@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react'
 import styles from './ProfileCard.module.css'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
-import profilePicture from '../../assets/snoo.png'
-import Steam from '../../assets/social/steam.png'
-import Discord from '../../assets/social/discord.png'
-import Gmail from '../../assets/social/gmail.png'
-import Github from '../../assets/social/github.png'
-import Twitter from '../../assets/social/twitter.png'
+import profilePicture from '../../assets/snoo-min.png'
+import Steam from '../../assets/social/steam-min.png'
+import Discord from '../../assets/social/discord-min.png'
+import Gmail from '../../assets/social/gmail-min.png'
+import Github from '../../assets/social/github-min.png'
+import Twitter from '../../assets/social/twitter-min.png'
 
 const ProfileCard = () => {
     const [Hovered, setHovered] = useState(false)
