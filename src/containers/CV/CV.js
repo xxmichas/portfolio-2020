@@ -178,6 +178,9 @@ const CV = (props) => {
                         <tr>
                             <td>Advanced Knowledge of Client-Side JavaScript, Node.js and Node Package Manager</td>
                         </tr>
+                        <tr>
+                            <td>Good Understanding of REST API (using Express.js)</td>
+                        </tr>
                     </tbody>
                 </table>
                 <div className={styles.Filler} />
