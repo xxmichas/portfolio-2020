@@ -92,6 +92,10 @@ const CV = (props) => {
                                 <td>Client-Side + Node.js</td>
                             </tr>
                             <tr>
+                                <td>TypeScript</td>
+                                <td>TypeScript 4.1</td>
+                            </tr>
+                            <tr>
                                 <td>HTML + CSS</td>
                                 <td>HTML 5 + CSS 3</td>
                             </tr>
