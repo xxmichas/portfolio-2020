@@ -177,13 +177,13 @@ const CV = (props) => {
                             <td>Created Windows programs using Electron Framework for JavaScript</td>
                         </tr>
                         <tr>
-                            <td>Created 2D/3D games for Windows using Unity Engine</td>
+                            <td>experience with MongoDB</td>
                         </tr>
                         <tr>
                             <td>Advanced Knowledge of Client-Side JavaScript, Node.js and Node Package Manager</td>
                         </tr>
                         <tr>
-                            <td>Good Understanding of REST API (using Express.js)</td>
+                            <td>Good Understanding of REST API</td>
                         </tr>
                     </tbody>
                 </table>
