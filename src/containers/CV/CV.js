@@ -177,7 +177,7 @@ const CV = (props) => {
                             <td>Created Windows programs using Electron Framework for JavaScript</td>
                         </tr>
                         <tr>
-                            <td>experience with MongoDB</td>
+                            <td>Experience with MongoDB</td>
                         </tr>
                         <tr>
                             <td>Advanced Knowledge of Client-Side JavaScript, Node.js and Node Package Manager</td>
