@@ -13,7 +13,7 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 )
-/*
+
 if (DesktopBrowser) {
     ReactDOM.render(
         <React.StrictMode>
@@ -22,4 +22,3 @@ if (DesktopBrowser) {
         document.getElementById('fluid-background')
     )
 }
-*/
