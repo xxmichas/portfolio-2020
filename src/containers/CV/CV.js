@@ -42,11 +42,11 @@ const CV = (props) => {
                             </tr>
                             <tr>
                                 <td>Address:</td>
-                                <td>Wheatley, Oxford OX33 1XJ</td>
+                                <td>Kielce, Poland</td>
                             </tr>
                             <tr>
                                 <td>Phone:</td>
-                                <td>07925525743</td>
+                                <td>+48 790515666</td>
                             </tr>
                             <tr>
                                 <td>E-mail:</td>
@@ -152,7 +152,7 @@ const CV = (props) => {
                             <td>Waiter in The Treehouse Restaurant at the Alnwick Garden</td>
                         </tr>
                         <tr>
-                            <td>09/2020 - current</td>
+                            <td>09/2020 - 01/2021</td>
                             <td>Busser in Quod Restaurant</td>
                         </tr>
                     </tbody>
