@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "./IAI/static/css/main.cef01a9c.chunk.css",
-    "main.js": "./IAI/static/js/main.47a186ba.chunk.js",
-    "main.js.map": "./IAI/static/js/main.47a186ba.chunk.js.map",
+    "main.css": "./IAI/static/css/main.6bbf60b0.chunk.css",
+    "main.js": "./IAI/static/js/main.4ea7fb9a.chunk.js",
+    "main.js.map": "./IAI/static/js/main.4ea7fb9a.chunk.js.map",
     "runtime-main.js": "./IAI/static/js/runtime-main.19d2a843.js",
     "runtime-main.js.map": "./IAI/static/js/runtime-main.19d2a843.js.map",
     "static/css/2.0a956c18.chunk.css": "./IAI/static/css/2.0a956c18.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.0add8cb9.chunk.js.map": "./IAI/static/js/2.0add8cb9.chunk.js.map",
     "index.html": "./IAI/index.html",
     "static/css/2.0a956c18.chunk.css.map": "./IAI/static/css/2.0a956c18.chunk.css.map",
-    "static/css/main.cef01a9c.chunk.css.map": "./IAI/static/css/main.cef01a9c.chunk.css.map",
+    "static/css/main.6bbf60b0.chunk.css.map": "./IAI/static/css/main.6bbf60b0.chunk.css.map",
     "static/js/2.0add8cb9.chunk.js.LICENSE.txt": "./IAI/static/js/2.0add8cb9.chunk.js.LICENSE.txt",
     "static/media/MASKA EMPIRE E-FLEX GOGGLE (BLACK).8aef5fa7.png": "./IAI/static/media/MASKA EMPIRE E-FLEX GOGGLE (BLACK).8aef5fa7.png",
     "static/media/Tippmann-large.611a502f.png": "./IAI/static/media/Tippmann-large.611a502f.png",
@@ -30,7 +30,7 @@
     "static/js/runtime-main.19d2a843.js",
     "static/css/2.0a956c18.chunk.css",
     "static/js/2.0add8cb9.chunk.js",
-    "static/css/main.cef01a9c.chunk.css",
-    "static/js/main.47a186ba.chunk.js"
+    "static/css/main.6bbf60b0.chunk.css",
+    "static/js/main.4ea7fb9a.chunk.js"
   ]
 }
