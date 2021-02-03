@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./IAI/static/css/main.828b5999.chunk.css",
+    "main.css": "./IAI/static/css/main.65b598fd.chunk.css",
     "main.js": "./IAI/static/js/main.38998a1b.chunk.js",
     "main.js.map": "./IAI/static/js/main.38998a1b.chunk.js.map",
     "runtime-main.js": "./IAI/static/js/runtime-main.19d2a843.js",
@@ -10,7 +10,7 @@
     "static/js/2.ec049ced.chunk.js.map": "./IAI/static/js/2.ec049ced.chunk.js.map",
     "index.html": "./IAI/index.html",
     "static/css/2.0a956c18.chunk.css.map": "./IAI/static/css/2.0a956c18.chunk.css.map",
-    "static/css/main.828b5999.chunk.css.map": "./IAI/static/css/main.828b5999.chunk.css.map",
+    "static/css/main.65b598fd.chunk.css.map": "./IAI/static/css/main.65b598fd.chunk.css.map",
     "static/js/2.ec049ced.chunk.js.LICENSE.txt": "./IAI/static/js/2.ec049ced.chunk.js.LICENSE.txt",
     "static/media/MASKA EMPIRE E-FLEX GOGGLE (BLACK).8aef5fa7.png": "./IAI/static/media/MASKA EMPIRE E-FLEX GOGGLE (BLACK).8aef5fa7.png",
     "static/media/Tippmann-large.611a502f.png": "./IAI/static/media/Tippmann-large.611a502f.png",
@@ -30,7 +30,7 @@
     "static/js/runtime-main.19d2a843.js",
     "static/css/2.0a956c18.chunk.css",
     "static/js/2.ec049ced.chunk.js",
-    "static/css/main.828b5999.chunk.css",
+    "static/css/main.65b598fd.chunk.css",
     "static/js/main.38998a1b.chunk.js"
   ]
 }
