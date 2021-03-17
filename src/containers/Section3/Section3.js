@@ -9,7 +9,7 @@ import NTDF from '../../assets/projects/NTDF-min.png'
 import VR from '../../assets/projects/VR-min.png'
 import Portfolio from '../../assets/projects/portfolio-min.png'
 import SAU from '../../assets/projects/SAU-min.png'
-import Bot from '../../assets/projects/bot-min.png'
+import IAI from '../../assets/projects/IAI-min.png'
 import Server from '../../assets/projects/server-min.png'
 
 const Section3 = (props) => {
@@ -22,7 +22,7 @@ const Section3 = (props) => {
         <ProjectCard key={2} active={page === 2} background={VR} centered={true} title="Vertical Runner" description="2D Unity Game" info="Vertical Runner is a simple 2D infinite runner game. The pace speeds up over time to make it difficult and reflex-based. this game was one of my first C#/Unity projects. It helped me improve my programming skills and prepared me for bigger Unity projects" buttons={[{name: "Github", func: null, url: "https://github.com/xxmichas/Vertical-Runner"}]} />,
         <ProjectCard key={3} active={page === 3} background={Server} centered={false} title="Web Server in Node.js" description="HTTP Server With Authentication And Tokens" info="Express.js server with register and login functionalities using bcrypt for password hashing and JSON web token to keep users signed in between sessions" buttons={[{name: "Github", func: null, url: "https://github.com/xxmichas/http-login-with-tokens"}]} />,
         <ProjectCard key={4} active={page === 4} background={Portfolio} centered={true} title="Portfolio Website in React" description="My Portfolio Website Built With React" info="react Website that uses many animation libraries and PavelDoGreat's WebGL-Fluid-Simulation in order to provide the best experience for end user" buttons={[{name: "Github", func: null, url: "https://github.com/xxmichas/portfolio"}]} />,
-        <ProjectCard key={5} active={page === 5} background={Bot} centered={true} title="Discord bot in Node.js" description="Discord Bot Using Discord.js Library" info="Utility Discord bot running on discord.js library. one of my first node.js projects" buttons={[{name: "Github", func: null, url: "https://github.com/xxmichas/boy-bot"}]} />
+        <ProjectCard key={5} active={page === 5} background={IAI} centered={true} title="React Website" description="Website" info="An example in React I was asked to create from a PSD file for a job interview" buttons={[{name: "Github", func: null, url: "https://github.com/xxmichas/IAI"}, {name: "Preview", func: null, url: "https://xxmichas.com/IAI"}]} />
     ]
 
     return (
