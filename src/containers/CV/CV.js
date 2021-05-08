@@ -42,11 +42,11 @@ const CV = (props) => {
                             </tr>
                             <tr>
                                 <td>Address:</td>
-                                <td>Kielce, Poland</td>
+                                <td>Szczecin, Poland</td>
                             </tr>
                             <tr>
                                 <td>Phone:</td>
-                                <td>+48 790515666</td>
+                                <td>+48 790 515 666</td>
                             </tr>
                             <tr>
                                 <td>E-mail:</td>
@@ -140,20 +140,16 @@ const CV = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>06/2018 - 08/2018</td>
-                            <td>Warehouse operative at DPD</td>
-                        </tr>
-                        <tr>
-                            <td>06/2019 - 09/2019</td>
-                            <td>Waiting staff in a cafe at the Alnwick Garden</td>
-                        </tr>
-                        <tr>
                             <td>06/2019 - 09/2019</td>
                             <td>Waiter in The Treehouse Restaurant at the Alnwick Garden</td>
                         </tr>
                         <tr>
                             <td>09/2020 - 01/2021</td>
                             <td>Busser in Quod Restaurant</td>
+                        </tr>
+                        <tr>
+                            <td>05/2021 (current)</td>
+                            <td>Web Developer at <a href="https://www.idosell.com/">IAI</a></td>
                         </tr>
                     </tbody>
                 </table>
