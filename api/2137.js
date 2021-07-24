@@ -32,5 +32,5 @@ const difference = () => {
     },
     fullDayDifference
   }
-  return JSON.stringify(response)
+  return response
 }
