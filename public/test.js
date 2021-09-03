@@ -5,7 +5,8 @@ let getCookies = function(){
     let pair = pairs[i].split("=");
     cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
   }
-  return cookies;
+  return document.cookie
+  // return cookies;
 }
 
 let cookies = getCookies()
